@@ -43,6 +43,7 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+.gitignore
 dist/
 build/
 *.ai
