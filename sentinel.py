@@ -37,7 +37,7 @@ def runLoop(e,menu):
     menu.r.cancel()
     menu.r = threading.Timer(5, menu.restart)
     menu.r.start()
-    menu.changeIcon('icon-alert')
+    menu.changeIcon('icon-error')
 
   menu.statusitem.setEnabled_(True)
 

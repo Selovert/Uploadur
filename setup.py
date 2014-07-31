@@ -30,6 +30,8 @@ DATA_FILES = [
   'Resources/uploadur-dl@2x.png',
   'Resources/uploadur-grey.png',
   'Resources/uploadur-grey@2x.png',
+  'Resources/uploadur-error.png',
+  'Resources/uploadur-error@2x.png',
   'Resources/uploadur-alert.png',
   'Resources/uploadur-alert@2x.png',
 ]
@@ -38,7 +40,7 @@ plist=dict(
         LSUIElement=True,
         NSUserNotificationAlertStyle='banner',
         CFBundleName='Uploadur',
-        CFBundleVersion='0.1.0',
+        CFBundleVersion='0.1.9',
         CFBundleIdentifier='selovert.uploadur',
         CFBundleSignature='SBLM',
         NSHumanReadableCopyright="Don't steal this code, please.",

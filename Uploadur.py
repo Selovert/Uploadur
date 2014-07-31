@@ -16,19 +16,28 @@
 
 # Contact Tassilo@selover.net for any questions
 
-import objc, threading, os, subprocess, pickle, sentinel
+import objc, threading, os, subprocess, pickle, sentinel, urllib, urllib2, json
 from alert import alert
 from Cocoa import *
 from Foundation import *
 from AppKit import *
 from PyObjCTools import NibClassBuilder, AppHelper
+from distutils.version import LooseVersion
 
 
 ### Configs ###
 # version number
 version = NSBundle.mainBundle().objectForInfoDictionaryKey_("CFBundleShortVersionString")
+shouldUpgrade = False
+upgradeChecked = False
 # All our icons and states of those icons
-status_images = {'icon':'uploadur','icon-dl':'uploadur-dl','icon-grey':'uploadur-grey','icon-alert':'uploadur-alert'}
+status_images = {
+    'icon'       :'uploadur',
+    'icon-dl'    :'uploadur-dl',
+    'icon-grey'  :'uploadur-grey',
+    'icon-error' :'uploadur-error',
+    'icon-alert' :'uploadur-alert'
+}
 # Original Screenshot path
 sentinel.tempPath = os.path.expanduser('~/Pictures/Screenshots')
 # Final Screenshot Resting Place (archives)
@@ -345,6 +354,21 @@ class Menu(NSObject):
         # stop items from becoming selectable when they are not
         self.menu.setAutoenablesItems_(False)
 
+        # About window
+        self.aboutItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('About', 'about:', '')
+        self.menu.addItem_(self.aboutItem)
+
+        # Check for app upgrade
+        self.checkUpgradeItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Check for Update', 'checkUpdate:', '')
+        self.menu.addItem_(self.checkUpgradeItem)
+
+        # App Upgrade
+        self.addUpgradeItem()
+
+        #Separator for the About window
+        self.aboutSeparator = NSMenuItem.separatorItem()
+        self.menu.addItem_(self.aboutSeparator)
+
         # Info bits!
         self.infoItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Idle...', 'info:', '')
         self.infoItem.setEnabled_(False)
@@ -359,21 +383,17 @@ class Menu(NSObject):
             self.debug = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Debug', 'debug:', '')
             self.menu.addItem_(self.debug)
 
-        #Separator for the About window
-        self.aboutSeparator = NSMenuItem.separatorItem()
-        self.menu.addItem_(self.aboutSeparator)
-
-        # About window
-        self.aboutItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('About', 'about:', '')
-        self.menu.addItem_(self.aboutItem)
+        #Separator for the functions/settings
+        self.preSettingsSeparator = NSMenuItem.separatorItem()
+        self.menu.addItem_(self.preSettingsSeparator)
 
         # Settings menu
         self.settingsItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Settings', 'settings:', '')
         self.menu.addItem_(self.settingsItem)
 
         #Separator for the functions/settings
-        self.settingsSeparator = NSMenuItem.separatorItem()
-        self.menu.addItem_(self.settingsSeparator)
+        self.postSettingsSeparator = NSMenuItem.separatorItem()
+        self.menu.addItem_(self.postSettingsSeparator)
 
         # Default event
         self.quitItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Quit', 'terminate:', '')
@@ -425,16 +445,43 @@ class Menu(NSObject):
             t.daemon = True
             t.start()
             self.r = threading.Timer(1500.0, self.restart, args=(True,))
+            self.c = threading.Timer(1400.0, self.checkUpdate)
             self.r.start()
+            self.c.start()
 
     def restart(self, scheduled = False):
         sentinel.run = False
         t.join()
         self.r.cancel()
+        self.c.cancel()
         if scheduled:
             print "Scheduled restart proceeding..."
         print str(t) + " ended...\n"
         self.start()
+
+    def checkForUpdate(self):
+        global shouldUpgrade
+        try:
+            siteVersion = json.loads(urllib2.urlopen("https://api.github.com/repos/selovert/Uploadur/releases").read())[0]['tag_name']
+        except:
+            siteVersion = '0'
+        if LooseVersion(siteVersion) > LooseVersion(version):
+            self.notification.notify('Uploadur', 'Update available')
+            print "Update to " + siteVersion + " available..."
+            shouldUpgrade = True
+        else: 
+            print "No update available..."
+
+    def addUpgradeItem(self, scheduled = False):
+        global upgradeChecked
+        if shouldUpgrade:
+            self.changeIcon('icon-alert', True)
+            self.upgradeItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Update', 'update:', '')
+            self.menu.addItem_(self.upgradeItem)
+            self.menu.removeItem_(self.checkUpgradeItem)
+        elif upgradeChecked and not scheduled:
+            self.notification.notify('Uploadur', version + ' is the current version!')
+        upgradeChecked = True
 
     def info_(self, sender):
         if self.URL is not '':
@@ -458,9 +505,36 @@ class Menu(NSObject):
         # Bring app to top
         NSApp.activateIgnoringOtherApps_(True)
 
+    def checkUpdate_(self, sender):
+        self.checkForUpdate()
+        self.addUpgradeItem()
+
+    def checkUpdate(self):
+        self.checkForUpdate()
+        self.addUpgradeItem(True)
+
+    def update_(self, sender):
+        pass
+        self.statusitem.setEnabled_(False)
+        def upgrade(self):
+            filePath = os.path.expanduser('~/Downloads/Uploadur.zip')
+            url = json.loads(urllib2.urlopen("https://api.github.com/repos/selovert/Uploadur/releases").read())[0]['assets'][0]['browser_download_url']
+            urllib.urlretrieve (url, filePath)
+            print "Download complete..."
+            os.chdir("../../../")
+            subprocess.call(["rm","-rf","Uploadur.app"])
+            subprocess.call(["unzip",filePath,"-d","."])
+            subprocess.call(["rm","-rf",filePath])
+            os.system("sleep 2 && open Uploadur.app &")
+            print "Restarting..."
+            AppHelper.stopEventLoop()
+        t = threading.Thread(target=upgrade, args=(self,))
+        t.daemon = True
+        t.start()
+
     def debug_(self, sender):
         print "AAAAAHHH"
-        self.restart()
+        self.addUpgradeItem()
 
 class AboutWindow(NSWindowController):
     versionLabel = objc.IBOutlet()
@@ -497,6 +571,7 @@ if __name__ == "__main__":
         print "Settings loaded from " + settingsPath + "..."
     app = NSApplication.sharedApplication()
     delegate = Menu.alloc().init()
+    delegate.checkForUpdate()
     NSApp().setDelegate_(delegate)
     AppHelper.runEventLoop()
 
