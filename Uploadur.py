@@ -160,6 +160,8 @@ class SettingsWindow(NSWindowController):
     @objc.IBAction
     def debug_(self,sender):
         pass
+        print autoStart
+        print self.loginCheckBox.state()
 
     def logout(self):
         sentinel.refreshToken = ''
@@ -287,12 +289,13 @@ class SettingsWindow(NSWindowController):
 
 
     def saveSettings(self):
+        global autoStart
         sentinel.tempPath = self.tempPathBox.stringValue()
         sentinel.archivePath = self.archivePathBox.stringValue()
         sentinel.albumName = self.albumBox.stringValue()
         sentinel.albumIsPrivate = self.albumPrivacyCheckBox.state()
         sentinel.titleText = self.titleBox.stringValue()
-        autoStart = self.loginCheckBox.state()
+        autoStart = int(self.loginCheckBox.state())
         self.checkAlbum()
         self.savePostUploads()
         settings = {'tempPath':sentinel.tempPath, 'archivePath':sentinel.archivePath, 'refreshToken':sentinel.refreshToken, 'albumName':sentinel.albumName, 'albumID':sentinel.albumID, 'albumIsPrivate':sentinel.albumIsPrivate, 'autoStart':autoStart, 'postUpload':sentinel.postUpload, 'titleText':sentinel.titleText}
@@ -437,7 +440,7 @@ class Menu(NSObject):
         global e
         global t
 
-        if threading.activeCount() < 3:
+        if threading.activeCount() < 4:
             print "Starting monitor loop..."
             sentinel.run = True
             e = threading.Event()
@@ -534,7 +537,7 @@ class Menu(NSObject):
 
     def debug_(self, sender):
         print "AAAAAHHH"
-        self.addUpgradeItem()
+        print autoStart
 
 class AboutWindow(NSWindowController):
     versionLabel = objc.IBOutlet()
