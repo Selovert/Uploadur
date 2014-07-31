@@ -551,6 +551,7 @@ class AboutWindow(NSWindowController):
         subprocess.Popen(['open', "https://github.com/Selovert/Uploadur"])
 
 def loadSettings():
+    global autoStart
     with open(settingsPath, 'r') as f:
         settings = pickle.load(f)
         sentinel.tempPath = settings['tempPath']
