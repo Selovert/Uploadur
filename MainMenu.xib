@@ -1,21 +1,3 @@
-<!-- Uploadur: Uploads OSX Screenshots to Imgur.
-Copyright (C) 2014  Tassilo Selover-Stephan
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Contact Tassilo@selover.net for any questions -->
-
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
@@ -73,7 +55,7 @@ Contact Tassilo@selover.net for any questions -->
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="apply:" target="-2" id="kv4-Oq-Nlt"/>
+                                                <action selector="apply:" target="-2" id="A5N-uH-Szo"/>
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsg-pL-C72">
@@ -172,7 +154,7 @@ Contact Tassilo@selover.net for any questions -->
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Folders" identifier="2" id="DMu-bG-hck">
-                                <view key="view" id="RFI-16-iwP">
+                                <view key="view" ambiguous="YES" id="RFI-16-iwP">
                                     <rect key="frame" x="10" y="33" width="348" height="222"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -249,14 +231,14 @@ Contact Tassilo@selover.net for any questions -->
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="apply:" target="-2" id="0sO-2g-RaO"/>
+                                                <action selector="apply:" target="-2" id="JAC-0L-wEB"/>
                                             </connections>
                                         </button>
                                     </subviews>
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Account" identifier="" id="fZF-mh-NCr">
-                                <view key="view" ambiguous="YES" id="6ui-zx-Rea">
+                                <view key="view" id="6ui-zx-Rea">
                                     <rect key="frame" x="10" y="33" width="348" height="222"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -290,7 +272,7 @@ Contact Tassilo@selover.net for any questions -->
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="apply:" target="-2" id="V8C-3r-LfT"/>
+                                                <action selector="apply:" target="-2" id="E4p-GV-By7"/>
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6S5-5k-RqX">

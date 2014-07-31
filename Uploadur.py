@@ -16,7 +16,7 @@
 
 # Contact Tassilo@selover.net for any questions
 
-import objc, threading, re, os, subprocess, sys, time, pickle, sentinel
+import objc, threading, os, subprocess, pickle, sentinel
 from alert import alert
 from Cocoa import *
 from Foundation import *
@@ -54,9 +54,9 @@ settingsPath = os.path.expanduser('~/.uploadur')
 # start on login
 autoStart = 0
 # development mode
-devMode = True
+devMode = False
 
-class settingsWindow(NSWindowController):
+class SettingsWindow(NSWindowController):
     debugButton = objc.IBOutlet()
     tempPathBox = objc.IBOutlet()
     archivePathBox = objc.IBOutlet()
@@ -289,6 +289,7 @@ class settingsWindow(NSWindowController):
         settings = {'tempPath':sentinel.tempPath, 'archivePath':sentinel.archivePath, 'refreshToken':sentinel.refreshToken, 'albumName':sentinel.albumName, 'albumID':sentinel.albumID, 'albumIsPrivate':sentinel.albumIsPrivate, 'autoStart':autoStart, 'postUpload':sentinel.postUpload, 'titleText':sentinel.titleText}
         with open(settingsPath, 'wb') as f:
             pickle.dump(settings, f)
+        print "Saved settings to " + settingsPath + "..."
 
 class SystemNotification(NSObject):
     def notify(self, title, message, link = 0):
@@ -358,9 +359,21 @@ class Menu(NSObject):
             self.debug = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Debug', 'debug:', '')
             self.menu.addItem_(self.debug)
 
+        #Separator for the About window
+        self.aboutSeparator = NSMenuItem.separatorItem()
+        self.menu.addItem_(self.aboutSeparator)
+
+        # About window
+        self.aboutItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('About', 'about:', '')
+        self.menu.addItem_(self.aboutItem)
+
         # Settings menu
         self.settingsItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Settings', 'settings:', '')
         self.menu.addItem_(self.settingsItem)
+
+        #Separator for the functions/settings
+        self.settingsSeparator = NSMenuItem.separatorItem()
+        self.menu.addItem_(self.settingsSeparator)
 
         # Default event
         self.quitItem = NSMenuItem.alloc().initWithTitle_action_keyEquivalent_('Quit', 'terminate:', '')
@@ -406,6 +419,7 @@ class Menu(NSObject):
 
         if threading.activeCount() < 3:
             print "Starting monitor loop..."
+            sentinel.run = True
             e = threading.Event()
             t = threading.Thread(target=sentinel.runLoop, args=(e,self))
             t.daemon = True
@@ -427,17 +441,37 @@ class Menu(NSObject):
             subprocess.Popen(['open', self.URL])
 
     def settings_(self, sender):
-        global viewController
-        viewController = settingsWindow.alloc().initWithWindowNibName_("MainMenu")
+        global settingsViewController
+        settingsViewController = SettingsWindow.alloc().initWithWindowNibName_("MainMenu")
         # Show the window
-        viewController.showWindow_(viewController)
-        viewController.ReleasedWhenClosed = True
+        settingsViewController.showWindow_(settingsViewController)
+        settingsViewController.ReleasedWhenClosed = True
+        # Bring app to top
+        NSApp.activateIgnoringOtherApps_(True)
+
+    def about_(self, sender):
+        global aboutViewController
+        aboutViewController = AboutWindow.alloc().initWithWindowNibName_("About")
+        # Show the window
+        aboutViewController.showWindow_(aboutViewController)
+        aboutViewController.ReleasedWhenClosed = True
         # Bring app to top
         NSApp.activateIgnoringOtherApps_(True)
 
     def debug_(self, sender):
         print "AAAAAHHH"
-        print len(pasteText())
+        self.restart()
+
+class AboutWindow(NSWindowController):
+    versionLabel = objc.IBOutlet()
+
+    def windowDidLoad(self):
+        NSWindowController.windowDidLoad(self)
+        self.versionLabel.setStringValue_("Version " + version)
+
+    @objc.IBAction
+    def source_(self, sender):
+        subprocess.Popen(['open', "https://github.com/Selovert/Uploadur"])
 
 def loadSettings():
     with open(settingsPath, 'r') as f:

@@ -21,7 +21,7 @@ import os, time, pyimgur, urllib2, subprocess
 import threading
 
 def runLoop(e,menu):
-  run = True
+  global run
   menu.changeIcon('icon-grey')
   menu.statusitem.setEnabled_(False)
 

@@ -22,8 +22,10 @@ from os import listdir
 APP = ['Uploadur.py']
 DATA_FILES = [
   'MainMenu.xib',
+  'About.xib',
   'Resources/uploadur.png',
   'Resources/uploadur@2x.png',
+  'Resources/uploadur-big.png',
   'Resources/uploadur-dl.png',
   'Resources/uploadur-dl@2x.png',
   'Resources/uploadur-grey.png',
