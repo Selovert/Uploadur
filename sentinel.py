@@ -31,7 +31,6 @@ def runLoop(e,menu):
     oldCount = len(os.listdir(tempPath))
     menu.changeIcon(menu.default_icon)
   except Exception, e:
-    menu.notification.notify('Uploadur', "Error: " + str(e))
     print e
     run = False
     menu.r.cancel()
