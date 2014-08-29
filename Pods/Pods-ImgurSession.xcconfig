@@ -1,0 +1,1 @@
+PODS_IMGURSESSION_OTHER_LDFLAGS = -framework Foundation

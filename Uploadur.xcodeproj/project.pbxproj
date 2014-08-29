@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		479EE5D819B083DF00DB9E07 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
+		479EE5DA19B084BD00DB9E07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
+		479EE5DC19B0899600DB9E07 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 479EE5DB19B0899600DB9E07 /* dsa_pub.pem */; };
+		47DCE8FE19A274F300D8A094 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DCE8FD19A274F300D8A094 /* Cocoa.framework */; };
+		47DCE90819A274F300D8A094 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE90619A274F300D8A094 /* InfoPlist.strings */; };
+		47DCE90A19A274F300D8A094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE90919A274F300D8A094 /* main.m */; };
+		47DCE90E19A274F300D8A094 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE90C19A274F300D8A094 /* Credits.rtf */; };
+		47DCE91119A274F300D8A094 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE91019A274F300D8A094 /* AppDelegate.m */; };
+		47DCE91419A274F300D8A094 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE91219A274F300D8A094 /* MainMenu.xib */; };
+		47DCE91D19A274F300D8A094 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DCE91C19A274F300D8A094 /* XCTest.framework */; };
+		47DCE91E19A274F300D8A094 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DCE8FD19A274F300D8A094 /* Cocoa.framework */; };
+		47DCE92619A274F300D8A094 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE92419A274F300D8A094 /* InfoPlist.strings */; };
+		47DCE92819A274F300D8A094 /* UploadurTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE92719A274F300D8A094 /* UploadurTests.m */; };
+		47DCE93419A2831B00D8A094 /* SettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE93219A2831B00D8A094 /* SettingsWindowController.m */; };
+		47DCE93519A2831B00D8A094 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE93319A2831B00D8A094 /* SettingsWindow.xib */; };
+		47DCE93819A287A600D8A094 /* StartupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE93719A287A600D8A094 /* StartupController.m */; };
+		47DCE93B19A29F8500D8A094 /* DirectoryMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE93A19A29F8500D8A094 /* DirectoryMonitor.m */; };
+		47DCE93D19A355B000D8A094 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE93C19A355B000D8A094 /* Images.xcassets */; };
+		47DCE94019A3572400D8A094 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE93F19A3572400D8A094 /* NotificationController.m */; };
+		47DCE94319A3E72D00D8A094 /* UploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE94219A3E72D00D8A094 /* UploadController.m */; };
+		47DCE9FD19A67EE900D8A094 /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE9FC19A67EE900D8A094 /* Globals.m */; };
+		47DCE9FF19A7D49100D8A094 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DCE9FE19A7D49100D8A094 /* SystemConfiguration.framework */; };
+		47DCEA0219A7DA3200D8A094 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0119A7DA3200D8A094 /* Reachability.m */; };
+		47DCEA0919B06D5500D8A094 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0719B06D5500D8A094 /* AboutWindowController.m */; };
+		47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DCEA0819B06D5500D8A094 /* AboutWindow.xib */; };
+		FB07FE01DBF94AF1ABBC8086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151F64575EF40F68A6C155B /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47DCE91F19A274F300D8A094 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47DCE8F219A274F300D8A094 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47DCE8F919A274F300D8A094;
+			remoteInfo = Uploadur;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		479EE5D919B0849800DB9E07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				479EE5DA19B084BD00DB9E07 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2151F64575EF40F68A6C155B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		479EE5D719B083DF00DB9E07 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		479EE5DB19B0899600DB9E07 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		47DCE8FA19A274F300D8A094 /* Uploadur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uploadur.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47DCE8FD19A274F300D8A094 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		47DCE90019A274F300D8A094 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		47DCE90119A274F300D8A094 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		47DCE90219A274F300D8A094 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		47DCE90519A274F300D8A094 /* Uploadur-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Uploadur-Info.plist"; sourceTree = "<group>"; };
+		47DCE90719A274F300D8A094 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		47DCE90919A274F300D8A094 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		47DCE90B19A274F300D8A094 /* Uploadur-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uploadur-Prefix.pch"; sourceTree = "<group>"; };
+		47DCE90D19A274F300D8A094 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		47DCE90F19A274F300D8A094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		47DCE91019A274F300D8A094 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47DCE91319A274F300D8A094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		47DCE91B19A274F300D8A094 /* UploadurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UploadurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47DCE91C19A274F300D8A094 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		47DCE92319A274F300D8A094 /* UploadurTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UploadurTests-Info.plist"; sourceTree = "<group>"; };
+		47DCE92519A274F300D8A094 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		47DCE92719A274F300D8A094 /* UploadurTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadurTests.m; sourceTree = "<group>"; };
+		47DCE93119A2831B00D8A094 /* SettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindowController.h; sourceTree = "<group>"; };
+		47DCE93219A2831B00D8A094 /* SettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindowController.m; sourceTree = "<group>"; };
+		47DCE93319A2831B00D8A094 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindow.xib; sourceTree = "<group>"; };
+		47DCE93619A287A600D8A094 /* StartupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupController.h; sourceTree = "<group>"; };
+		47DCE93719A287A600D8A094 /* StartupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupController.m; sourceTree = "<group>"; };
+		47DCE93919A29F8500D8A094 /* DirectoryMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryMonitor.h; sourceTree = "<group>"; };
+		47DCE93A19A29F8500D8A094 /* DirectoryMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryMonitor.m; sourceTree = "<group>"; };
+		47DCE93C19A355B000D8A094 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		47DCE93E19A3572400D8A094 /* NotificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		47DCE93F19A3572400D8A094 /* NotificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		47DCE94119A3E72D00D8A094 /* UploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadController.h; sourceTree = "<group>"; };
+		47DCE94219A3E72D00D8A094 /* UploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadController.m; sourceTree = "<group>"; };
+		47DCE9F919A49BC900D8A094 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		47DCE9FB19A67EE900D8A094 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		47DCE9FC19A67EE900D8A094 /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		47DCE9FE19A7D49100D8A094 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		47DCEA0019A7DA3200D8A094 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		47DCEA0119A7DA3200D8A094 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		47DCEA0419ADD2B100D8A094 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		47DCEA0619B06D5500D8A094 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
+		47DCEA0719B06D5500D8A094 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
+		47DCEA0819B06D5500D8A094 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+		F1DA373A206344CBA70513E4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47DCE8F719A274F300D8A094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DCE9FF19A7D49100D8A094 /* SystemConfiguration.framework in Frameworks */,
+				47DCE8FE19A274F300D8A094 /* Cocoa.framework in Frameworks */,
+				FB07FE01DBF94AF1ABBC8086 /* libPods.a in Frameworks */,
+				479EE5D819B083DF00DB9E07 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47DCE91819A274F300D8A094 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DCE91E19A274F300D8A094 /* Cocoa.framework in Frameworks */,
+				47DCE91D19A274F300D8A094 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47DCE8F119A274F300D8A094 = {
+			isa = PBXGroup;
+			children = (
+				47DCE90319A274F300D8A094 /* Uploadur */,
+				47DCE92119A274F300D8A094 /* UploadurTests */,
+				47DCE8FC19A274F300D8A094 /* Frameworks */,
+				47DCE8FB19A274F300D8A094 /* Products */,
+				F1DA373A206344CBA70513E4 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		47DCE8FB19A274F300D8A094 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47DCE8FA19A274F300D8A094 /* Uploadur.app */,
+				47DCE91B19A274F300D8A094 /* UploadurTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47DCE8FC19A274F300D8A094 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				479EE5D719B083DF00DB9E07 /* Sparkle.framework */,
+				47DCEA0419ADD2B100D8A094 /* Security.framework */,
+				47DCE9FE19A7D49100D8A094 /* SystemConfiguration.framework */,
+				47DCE9F919A49BC900D8A094 /* CFNetwork.framework */,
+				47DCE8FD19A274F300D8A094 /* Cocoa.framework */,
+				47DCE91C19A274F300D8A094 /* XCTest.framework */,
+				47DCE8FF19A274F300D8A094 /* Other Frameworks */,
+				2151F64575EF40F68A6C155B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47DCE8FF19A274F300D8A094 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47DCE90019A274F300D8A094 /* AppKit.framework */,
+				47DCE90119A274F300D8A094 /* CoreData.framework */,
+				47DCE90219A274F300D8A094 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		47DCE90319A274F300D8A094 /* Uploadur */ = {
+			isa = PBXGroup;
+			children = (
+				47DCEA0319A896D500D8A094 /* Reachability */,
+				47DCE94419A3E73400D8A094 /* Classes */,
+				47DCE91219A274F300D8A094 /* MainMenu.xib */,
+				47DCEA0819B06D5500D8A094 /* AboutWindow.xib */,
+				47DCE93319A2831B00D8A094 /* SettingsWindow.xib */,
+				47DCE93C19A355B000D8A094 /* Images.xcassets */,
+				47DCE90419A274F300D8A094 /* Supporting Files */,
+			);
+			path = Uploadur;
+			sourceTree = "<group>";
+		};
+		47DCE90419A274F300D8A094 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				479EE5DB19B0899600DB9E07 /* dsa_pub.pem */,
+				47DCE90519A274F300D8A094 /* Uploadur-Info.plist */,
+				47DCE90619A274F300D8A094 /* InfoPlist.strings */,
+				47DCE90919A274F300D8A094 /* main.m */,
+				47DCE90B19A274F300D8A094 /* Uploadur-Prefix.pch */,
+				47DCE90C19A274F300D8A094 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47DCE92119A274F300D8A094 /* UploadurTests */ = {
+			isa = PBXGroup;
+			children = (
+				47DCE92719A274F300D8A094 /* UploadurTests.m */,
+				47DCE92219A274F300D8A094 /* Supporting Files */,
+			);
+			path = UploadurTests;
+			sourceTree = "<group>";
+		};
+		47DCE92219A274F300D8A094 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				47DCE92319A274F300D8A094 /* UploadurTests-Info.plist */,
+				47DCE92419A274F300D8A094 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		47DCE94419A3E73400D8A094 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				47DCEA0619B06D5500D8A094 /* AboutWindowController.h */,
+				47DCEA0719B06D5500D8A094 /* AboutWindowController.m */,
+				47DCE90F19A274F300D8A094 /* AppDelegate.h */,
+				47DCE91019A274F300D8A094 /* AppDelegate.m */,
+				47DCE93919A29F8500D8A094 /* DirectoryMonitor.h */,
+				47DCE93A19A29F8500D8A094 /* DirectoryMonitor.m */,
+				47DCE9FB19A67EE900D8A094 /* Globals.h */,
+				47DCE9FC19A67EE900D8A094 /* Globals.m */,
+				47DCE93E19A3572400D8A094 /* NotificationController.h */,
+				47DCE93F19A3572400D8A094 /* NotificationController.m */,
+				47DCE93119A2831B00D8A094 /* SettingsWindowController.h */,
+				47DCE93219A2831B00D8A094 /* SettingsWindowController.m */,
+				47DCE93619A287A600D8A094 /* StartupController.h */,
+				47DCE93719A287A600D8A094 /* StartupController.m */,
+				47DCE94119A3E72D00D8A094 /* UploadController.h */,
+				47DCE94219A3E72D00D8A094 /* UploadController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		47DCEA0319A896D500D8A094 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				47DCEA0019A7DA3200D8A094 /* Reachability.h */,
+				47DCEA0119A7DA3200D8A094 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47DCE8F919A274F300D8A094 /* Uploadur */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47DCE92B19A274F300D8A094 /* Build configuration list for PBXNativeTarget "Uploadur" */;
+			buildPhases = (
+				C965409F1A984BC4AA02650D /* Check Pods Manifest.lock */,
+				47DCE8F619A274F300D8A094 /* Sources */,
+				47DCE8F719A274F300D8A094 /* Frameworks */,
+				47DCE8F819A274F300D8A094 /* Resources */,
+				A7392A68CC3B48B6807E7D62 /* Copy Pods Resources */,
+				479EE5D919B0849800DB9E07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Uploadur;
+			productName = Uploadur;
+			productReference = 47DCE8FA19A274F300D8A094 /* Uploadur.app */;
+			productType = "com.apple.product-type.application";
+		};
+		47DCE91A19A274F300D8A094 /* UploadurTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47DCE92E19A274F300D8A094 /* Build configuration list for PBXNativeTarget "UploadurTests" */;
+			buildPhases = (
+				47DCE91719A274F300D8A094 /* Sources */,
+				47DCE91819A274F300D8A094 /* Frameworks */,
+				47DCE91919A274F300D8A094 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47DCE92019A274F300D8A094 /* PBXTargetDependency */,
+			);
+			name = UploadurTests;
+			productName = UploadurTests;
+			productReference = 47DCE91B19A274F300D8A094 /* UploadurTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47DCE8F219A274F300D8A094 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Tassilo Selover-Stephan";
+				TargetAttributes = {
+					47DCE91A19A274F300D8A094 = {
+						TestTargetID = 47DCE8F919A274F300D8A094;
+					};
+				};
+			};
+			buildConfigurationList = 47DCE8F519A274F300D8A094 /* Build configuration list for PBXProject "Uploadur" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47DCE8F119A274F300D8A094;
+			productRefGroup = 47DCE8FB19A274F300D8A094 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47DCE8F919A274F300D8A094 /* Uploadur */,
+				47DCE91A19A274F300D8A094 /* UploadurTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47DCE8F819A274F300D8A094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				479EE5DC19B0899600DB9E07 /* dsa_pub.pem in Resources */,
+				47DCE90819A274F300D8A094 /* InfoPlist.strings in Resources */,
+				47DCE93D19A355B000D8A094 /* Images.xcassets in Resources */,
+				47DCE93519A2831B00D8A094 /* SettingsWindow.xib in Resources */,
+				47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */,
+				47DCE90E19A274F300D8A094 /* Credits.rtf in Resources */,
+				47DCE91419A274F300D8A094 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47DCE91919A274F300D8A094 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DCE92619A274F300D8A094 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7392A68CC3B48B6807E7D62 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C965409F1A984BC4AA02650D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47DCE8F619A274F300D8A094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DCE9FD19A67EE900D8A094 /* Globals.m in Sources */,
+				47DCEA0919B06D5500D8A094 /* AboutWindowController.m in Sources */,
+				47DCE91119A274F300D8A094 /* AppDelegate.m in Sources */,
+				47DCE93819A287A600D8A094 /* StartupController.m in Sources */,
+				47DCE94019A3572400D8A094 /* NotificationController.m in Sources */,
+				47DCE93419A2831B00D8A094 /* SettingsWindowController.m in Sources */,
+				47DCE93B19A29F8500D8A094 /* DirectoryMonitor.m in Sources */,
+				47DCE94319A3E72D00D8A094 /* UploadController.m in Sources */,
+				47DCEA0219A7DA3200D8A094 /* Reachability.m in Sources */,
+				47DCE90A19A274F300D8A094 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47DCE91719A274F300D8A094 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47DCE92819A274F300D8A094 /* UploadurTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47DCE92019A274F300D8A094 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47DCE8F919A274F300D8A094 /* Uploadur */;
+			targetProxy = 47DCE91F19A274F300D8A094 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		47DCE90619A274F300D8A094 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47DCE90719A274F300D8A094 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		47DCE90C19A274F300D8A094 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47DCE90D19A274F300D8A094 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		47DCE91219A274F300D8A094 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47DCE91319A274F300D8A094 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		47DCE92419A274F300D8A094 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				47DCE92519A274F300D8A094 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		47DCE92919A274F300D8A094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		47DCE92A19A274F300D8A094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		47DCE92C19A274F300D8A094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1DA373A206344CBA70513E4 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Uploadur/Uploadur-Prefix.pch";
+				INFOPLIST_FILE = "Uploadur/Uploadur-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		47DCE92D19A274F300D8A094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1DA373A206344CBA70513E4 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Uploadur/Uploadur-Prefix.pch";
+				INFOPLIST_FILE = "Uploadur/Uploadur-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		47DCE92F19A274F300D8A094 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Uploadur.app/Contents/MacOS/Uploadur";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Uploadur/Uploadur-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UploadurTests/UploadurTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		47DCE93019A274F300D8A094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Uploadur.app/Contents/MacOS/Uploadur";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Uploadur/Uploadur-Prefix.pch";
+				INFOPLIST_FILE = "UploadurTests/UploadurTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47DCE8F519A274F300D8A094 /* Build configuration list for PBXProject "Uploadur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47DCE92919A274F300D8A094 /* Debug */,
+				47DCE92A19A274F300D8A094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47DCE92B19A274F300D8A094 /* Build configuration list for PBXNativeTarget "Uploadur" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47DCE92C19A274F300D8A094 /* Debug */,
+				47DCE92D19A274F300D8A094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47DCE92E19A274F300D8A094 /* Build configuration list for PBXNativeTarget "UploadurTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47DCE92F19A274F300D8A094 /* Debug */,
+				47DCE93019A274F300D8A094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47DCE8F219A274F300D8A094 /* Project object */;
+}
