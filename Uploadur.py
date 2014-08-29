@@ -21,7 +21,7 @@ from alert import alert
 from Cocoa import *
 from Foundation import *
 from AppKit import *
-from PyObjCTools import NibClassBuilder, AppHelper
+from PyObjCTools import AppHelper
 from distutils.version import LooseVersion
 
 
