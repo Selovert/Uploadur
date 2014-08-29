@@ -44,5 +44,4 @@ coverage.xml
 docs/_build/
 
 .gitignore
-Uploadur/AppKeys.plist
 Uploadur/Resources/AppKeys.plist
