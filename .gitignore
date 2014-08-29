@@ -44,9 +44,5 @@ coverage.xml
 docs/_build/
 
 .gitignore
-dist/
-build/
-*.ai
-test.py
-Uploadur.sublime-project
-Uploadur.sublime-workspace
+Uploadur/AppKeys.plist
+Uploadur/AppKeys.plist

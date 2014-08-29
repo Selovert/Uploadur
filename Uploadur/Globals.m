@@ -13,8 +13,9 @@
 - (Globals *) init {
     _defaults = [NSUserDefaults standardUserDefaults];
     [self loadSettings];
-    _clientID = @"f3908f78693871e";
-    _clientSecret = @"80b84cf7f60dfe76c844e34b54075130158a1081";
+    NSDictionary *appKeys = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"AppKeys" ofType:@"plist"]];
+    _clientID = [appKeys objectForKey:@"clientID"];
+    _clientSecret = [appKeys objectForKey:@"clientSecret"];
     return [super init];
 }
 

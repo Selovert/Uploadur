@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		476D485519B08F5800BF30A2 /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 476D485419B08F5800BF30A2 /* AppKeys.plist */; };
 		479EE5D819B083DF00DB9E07 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
 		479EE5DA19B084BD00DB9E07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
 		479EE5DC19B0899600DB9E07 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 479EE5DB19B0899600DB9E07 /* dsa_pub.pem */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		2151F64575EF40F68A6C155B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		476D485419B08F5800BF30A2 /* AppKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKeys.plist; sourceTree = "<group>"; };
 		479EE5D719B083DF00DB9E07 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		479EE5DB19B0899600DB9E07 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		47DCE8FA19A274F300D8A094 /* Uploadur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uploadur.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 			children = (
 				479EE5DB19B0899600DB9E07 /* dsa_pub.pem */,
 				47DCE90519A274F300D8A094 /* Uploadur-Info.plist */,
+				476D485419B08F5800BF30A2 /* AppKeys.plist */,
 				47DCE90619A274F300D8A094 /* InfoPlist.strings */,
 				47DCE90919A274F300D8A094 /* main.m */,
 				47DCE90B19A274F300D8A094 /* Uploadur-Prefix.pch */,
@@ -334,6 +337,7 @@
 				47DCE90819A274F300D8A094 /* InfoPlist.strings in Resources */,
 				47DCE93D19A355B000D8A094 /* Images.xcassets in Resources */,
 				47DCE93519A2831B00D8A094 /* SettingsWindow.xib in Resources */,
+				476D485519B08F5800BF30A2 /* AppKeys.plist in Resources */,
 				47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */,
 				47DCE90E19A274F300D8A094 /* Credits.rtf in Resources */,
 				47DCE91419A274F300D8A094 /* MainMenu.xib in Resources */,
