@@ -13,8 +13,8 @@ Using Uploadur is as simple as taking a screenshot in OSX.
 - CMD + SHIFT + 4 + Click & Drag: Takes a screenshot of a selected box.
 - CMD + SHIFT + 4 + SPACE + Click: Takes a screenshot of a selected window.
 
-After you take the screenshot, the Uploadur icon ![Uploadur Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Resources/uploadur.png) should become green ![Uploadur-dl Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Resources/uploadur-dl.png), followed by a notification that the screenshot has been uploaded.
-![Notification](https://raw.githubusercontent.com/Selovert/Uploadur/master/Readme/Notification.png)
+After you take the screenshot, the Uploadur icon ![Uploadur Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Images.xcassets/icon.imageset/uploadur.png) should become green ![Uploadur-dl Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Resources/uploadur-dl.png), followed by a notification that the screenshot has been uploaded.
+![Notification](https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Images.xcassets/icon-dl.imageset/uploadur-dl.png)
 
 #####Connecting Your Account
 If you have an Imgur account, and would like pictures to be uploaded using this account, you can connect your account to the app. 
