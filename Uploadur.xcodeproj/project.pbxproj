@@ -33,6 +33,8 @@
 		47DCEA0219A7DA3200D8A094 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0119A7DA3200D8A094 /* Reachability.m */; };
 		47DCEA0919B06D5500D8A094 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0719B06D5500D8A094 /* AboutWindowController.m */; };
 		47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DCEA0819B06D5500D8A094 /* AboutWindow.xib */; };
+		47E7C80C19B0BC8000685384 /* UploadurAppCast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 47E7C80B19B0BC8000685384 /* UploadurAppCast.xml */; };
+		47E7C80E19B0CD2D00685384 /* changlelog.html in Resources */ = {isa = PBXBuildFile; fileRef = 47E7C80D19B0CD2D00685384 /* changlelog.html */; };
 		FB07FE01DBF94AF1ABBC8086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151F64575EF40F68A6C155B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +86,7 @@
 		47DCE92719A274F300D8A094 /* UploadurTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadurTests.m; sourceTree = "<group>"; };
 		47DCE93119A2831B00D8A094 /* SettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsWindowController.h; sourceTree = "<group>"; };
 		47DCE93219A2831B00D8A094 /* SettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsWindowController.m; sourceTree = "<group>"; };
-		47DCE93319A2831B00D8A094 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsWindow.xib; sourceTree = "<group>"; };
+		47DCE93319A2831B00D8A094 /* SettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsWindow.xib; path = Resources/SettingsWindow.xib; sourceTree = "<group>"; };
 		47DCE93619A287A600D8A094 /* StartupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupController.h; sourceTree = "<group>"; };
 		47DCE93719A287A600D8A094 /* StartupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupController.m; sourceTree = "<group>"; };
 		47DCE93919A29F8500D8A094 /* DirectoryMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryMonitor.h; sourceTree = "<group>"; };
@@ -103,7 +105,9 @@
 		47DCEA0419ADD2B100D8A094 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		47DCEA0619B06D5500D8A094 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
 		47DCEA0719B06D5500D8A094 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
-		47DCEA0819B06D5500D8A094 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutWindow.xib; sourceTree = "<group>"; };
+		47DCEA0819B06D5500D8A094 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindow.xib; path = Resources/AboutWindow.xib; sourceTree = "<group>"; };
+		47E7C80B19B0BC8000685384 /* UploadurAppCast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = UploadurAppCast.xml; sourceTree = "<group>"; };
+		47E7C80D19B0CD2D00685384 /* changlelog.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = changlelog.html; sourceTree = "<group>"; };
 		F1DA373A206344CBA70513E4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,12 +138,11 @@
 		477AA61419B0BACF005804C3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				47DCE93C19A355B000D8A094 /* Images.xcassets */,
-				479EE5DB19B0899600DB9E07 /* dsa_pub.pem */,
 				476D485419B08F5800BF30A2 /* AppKeys.plist */,
-				47DCEA0819B06D5500D8A094 /* AboutWindow.xib */,
-				47DCE91219A274F300D8A094 /* MainMenu.xib */,
-				47DCE93319A2831B00D8A094 /* SettingsWindow.xib */,
+				479EE5DB19B0899600DB9E07 /* dsa_pub.pem */,
+				47DCE93C19A355B000D8A094 /* Images.xcassets */,
+				47E7C80B19B0BC8000685384 /* UploadurAppCast.xml */,
+				47E7C80D19B0CD2D00685384 /* changlelog.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -192,10 +195,11 @@
 		47DCE90319A274F300D8A094 /* Uploadur */ = {
 			isa = PBXGroup;
 			children = (
-				47DCEA0319A896D500D8A094 /* Reachability */,
 				47DCE94419A3E73400D8A094 /* Classes */,
+				47E7C80A19B0BC0700685384 /* Xibs */,
 				477AA61419B0BACF005804C3 /* Resources */,
 				47DCE90419A274F300D8A094 /* Supporting Files */,
+				47DCEA0319A896D500D8A094 /* Reachability */,
 			);
 			path = Uploadur;
 			sourceTree = "<group>";
@@ -203,11 +207,11 @@
 		47DCE90419A274F300D8A094 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				47DCE90519A274F300D8A094 /* Uploadur-Info.plist */,
+				47DCE90C19A274F300D8A094 /* Credits.rtf */,
 				47DCE90619A274F300D8A094 /* InfoPlist.strings */,
 				47DCE90919A274F300D8A094 /* main.m */,
+				47DCE90519A274F300D8A094 /* Uploadur-Info.plist */,
 				47DCE90B19A274F300D8A094 /* Uploadur-Prefix.pch */,
-				47DCE90C19A274F300D8A094 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +264,16 @@
 				47DCEA0119A7DA3200D8A094 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		47E7C80A19B0BC0700685384 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				47DCEA0819B06D5500D8A094 /* AboutWindow.xib */,
+				47DCE91219A274F300D8A094 /* MainMenu.xib */,
+				47DCE93319A2831B00D8A094 /* SettingsWindow.xib */,
+			);
+			name = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +363,8 @@
 				47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */,
 				47DCE90E19A274F300D8A094 /* Credits.rtf in Resources */,
 				47DCE91419A274F300D8A094 /* MainMenu.xib in Resources */,
+				47E7C80E19B0CD2D00685384 /* changlelog.html in Resources */,
+				47E7C80C19B0BC8000685384 /* UploadurAppCast.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +470,6 @@
 				47DCE91319A274F300D8A094 /* Base */,
 			);
 			name = MainMenu.xib;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		47DCE92419A274F300D8A094 /* InfoPlist.strings */ = {

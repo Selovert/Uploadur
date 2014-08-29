@@ -49,5 +49,7 @@
 	<string>NSApplication</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/UploadurAppCast.xml</string>
 </dict>
 </plist>
