@@ -46,6 +46,8 @@
     _albumID = [_defaults objectForKey:@"albumID"];
     
     _albumIsPrivate = [_defaults integerForKey:@"albumIsPrivate"];
+    
+    _startUp = [_defaults integerForKey:@"startUp"];
 }
 
 - (void) saveAccessToken {

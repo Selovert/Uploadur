@@ -3,7 +3,7 @@ Uploadur
 Automatically upload your screenshots to Imgur! 
 
 ###How to install
-Download the [latest release](https://github.com/Selovert/Uploadur/releases/latest), and unzip Uploadur.zip. You can either use the app directly from here, or copy it into your Applications directory, and run it from there.
+Download the [latest release](http://tassilo.tk/Binaries/Uploadur-0.4.2.zip), and unzip Uploadur.zip. You can either use the app directly from here, or copy it into your Applications directory, and run it from there.
 
 ###How to Use
 #####Taking Screenshots
@@ -13,7 +13,7 @@ Using Uploadur is as simple as taking a screenshot in OSX.
 - CMD + SHIFT + 4 + Click & Drag: Takes a screenshot of a selected box.
 - CMD + SHIFT + 4 + SPACE + Click: Takes a screenshot of a selected window.
 
-After you take the screenshot, the Uploadur icon ![Uploadur Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Images.xcassets/icon.imageset/uploadur.png) should become green ![Uploadur-dl Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Images.xcassets/icon-dl.imageset/uploadur-dl.png), followed by a notification that the screenshot has been uploaded.
+After you take the screenshot, the Uploadur icon ![Uploadur Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/Images.xcassets/icon.imageset/uploadur.png) should become green ![Uploadur-dl Icon](https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/Images.xcassets/icon-dl.imageset/uploadur-dl.png), followed by a notification that the screenshot has been uploaded.
 ![Notification](https://raw.githubusercontent.com/Selovert/Uploadur/master/Readme/Notification.png)
 
 #####Connecting Your Account

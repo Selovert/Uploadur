@@ -33,8 +33,6 @@
 		47DCEA0219A7DA3200D8A094 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0119A7DA3200D8A094 /* Reachability.m */; };
 		47DCEA0919B06D5500D8A094 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0719B06D5500D8A094 /* AboutWindowController.m */; };
 		47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DCEA0819B06D5500D8A094 /* AboutWindow.xib */; };
-		47E7C80C19B0BC8000685384 /* UploadurAppCast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 47E7C80B19B0BC8000685384 /* UploadurAppCast.xml */; };
-		47E7C80E19B0CD2D00685384 /* changlelog.html in Resources */ = {isa = PBXBuildFile; fileRef = 47E7C80D19B0CD2D00685384 /* changlelog.html */; };
 		FB07FE01DBF94AF1ABBC8086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151F64575EF40F68A6C155B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -106,8 +104,6 @@
 		47DCEA0619B06D5500D8A094 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
 		47DCEA0719B06D5500D8A094 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
 		47DCEA0819B06D5500D8A094 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindow.xib; path = Resources/AboutWindow.xib; sourceTree = "<group>"; };
-		47E7C80B19B0BC8000685384 /* UploadurAppCast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = UploadurAppCast.xml; sourceTree = "<group>"; };
-		47E7C80D19B0CD2D00685384 /* changlelog.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = changlelog.html; sourceTree = "<group>"; };
 		F1DA373A206344CBA70513E4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,8 +137,6 @@
 				476D485419B08F5800BF30A2 /* AppKeys.plist */,
 				479EE5DB19B0899600DB9E07 /* dsa_pub.pem */,
 				47DCE93C19A355B000D8A094 /* Images.xcassets */,
-				47E7C80B19B0BC8000685384 /* UploadurAppCast.xml */,
-				47E7C80D19B0CD2D00685384 /* changlelog.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -363,8 +357,6 @@
 				47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */,
 				47DCE90E19A274F300D8A094 /* Credits.rtf in Resources */,
 				47DCE91419A274F300D8A094 /* MainMenu.xib in Resources */,
-				47E7C80E19B0CD2D00685384 /* changlelog.html in Resources */,
-				47E7C80C19B0BC8000685384 /* UploadurAppCast.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@
 
 - (void)windowDidLoad
 {
-    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     [_versionLabel setStringValue:[NSString stringWithFormat:@"Version %@",version]];
     [super windowDidLoad];
 }

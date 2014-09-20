@@ -45,3 +45,7 @@ docs/_build/
 
 .gitignore
 Uploadur/Resources/AppKeys.plist
+Uploadur/Resources/Icons/
+Uploadur/Resources/webhosting assets/
+
+Uploadur.zip

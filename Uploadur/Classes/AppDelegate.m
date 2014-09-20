@@ -21,6 +21,7 @@
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     
     [self changeIcon:_defaultIcon setToDefault:NO];
+    [_statusItem setAlternateImage:[[NSBundle mainBundle] imageForResource:@"icon-white"]];
     
     self.statusItem.menu = self.statusMenu;
     self.statusItem.highlightMode = YES;

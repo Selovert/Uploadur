@@ -21,6 +21,7 @@
 @property AppDelegate *appDelegate;
 @property Globals *globals;
 @property AFHTTPRequestOperationManager *httpClient;
+@property dispatch_semaphore_t semaphore;
 
 @property (strong) IBOutlet NSWindow *settingsWindow;
 @property (weak) IBOutlet NSButton *startupCheckBox;
@@ -36,10 +37,10 @@
 @property (weak) IBOutlet NSButton *logoutButton;
 @property (weak) IBOutlet NSTextField *accountLabel;
 @property (weak) IBOutlet NSTextField *albumLabel;
-@property (weak) IBOutlet NSTextField *albumBox;
+@property (weak) IBOutlet NSComboBox *albumBox;
 @property (weak) IBOutlet NSButton *albumPrivacyCheckBox;
 
-@property NSInteger startUp;
+@property NSMutableArray *albums;
 @property NSUserDefaults *defaults;
 
 - (void) reveal;

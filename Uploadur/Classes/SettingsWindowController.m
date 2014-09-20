@@ -21,6 +21,7 @@
     _startupController = [[StartupController alloc] init];
     _defaults = [NSUserDefaults standardUserDefaults];
     _httpClient = [AFHTTPRequestOperationManager manager];
+    _albums = [[NSMutableArray alloc] init];
     [super windowWillLoad];
 }
 
@@ -38,8 +39,8 @@
     NSImage *archiveIconImage = [[NSWorkspace sharedWorkspace] iconForFile:[_globals.archivePath path]];
     [archiveIconImage setSize:NSMakeSize(16,16)];
     
-    [_startupCheckBox setState:_startUp];
-    if ([_startupController isLaunchAtStartup] != _startUp) {
+    [_startupCheckBox setState:_globals.startUp];
+    if ([_startupController isLaunchAtStartup] != _globals.startUp) {
         NSLog(@"Toggling startup");
         [_startupController toggleLaunchAtStartup];
     }
@@ -75,6 +76,7 @@
                      [_authorizeButton setEnabled:NO];
                      [_authorizeLabel setTextColor:[NSColor disabledControlTextColor]];
                      [_albumBox setEnabled:YES];
+                     [self updateAlbums];
                      [_albumLabel setTextColor:[NSColor controlTextColor]];
                      [_albumPrivacyCheckBox setEnabled:YES];
                      [_logoutButton setTransparent:NO];
@@ -100,6 +102,31 @@
     }
 }
 
+- (void) updateAlbums {
+    if ((_globals.refreshToken) && (![_globals.albumName isEqualToString:@""])) {
+        [_albums removeAllObjects];
+        [_httpClient.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",_globals.accessToken] forHTTPHeaderField:@"Authorization"];
+        [_httpClient GET:@"https://api.imgur.com/3/account/me/albums/"
+              parameters:@{}
+                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                     _globals.albumID = nil;
+                     NSDictionary *data = [responseObject objectForKey:@"data"];
+                     for (id key in data) {
+                         [_albums addObject:[key objectForKey:@"title"]];
+                     }
+                     [_albumBox removeAllItems];
+                     [_albumBox addItemsWithObjectValues:_albums];
+                     
+                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                     NSLog(@"Failure getting albums for the box!");
+                 }
+         ];
+
+        
+    }
+
+}
+
 - (void) checkAlbum {
     if ((_globals.refreshToken) && (![_globals.albumName isEqualToString:@""])) {
         [_httpClient.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",_globals.accessToken] forHTTPHeaderField:@"Authorization"];
@@ -114,8 +141,7 @@
                              _globals.albumID = [key objectForKey:@"id"];
                              [self setAlbumPrivacy];
                              [_defaults setObject:_globals.albumID forKey:@"albumID"];
-                             [_defaults synchronize];
-                             [_appDelegate restart];
+                             dispatch_semaphore_signal(_semaphore);
                          }
                      }
                      if (!_globals.albumID) {
@@ -124,6 +150,7 @@
                      }
                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                      NSLog(@"Failure getting albums!");
+                     dispatch_semaphore_signal(_semaphore);
                  }
          ];
     }
@@ -133,14 +160,15 @@
     [_httpClient POST:@"https://api.imgur.com/3/album/"
            parameters: @{ @"title": _globals.albumName }
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                  NSLog(@"Made album '%@'",_globals.albumName);
                   NSDictionary *data = [responseObject objectForKey:@"data"];
                   _globals.albumID = [data objectForKey:@"id"];
                   [self setAlbumPrivacy];
                   [_defaults setObject:_globals.albumID forKey:@"albumID"];
-                  [_defaults synchronize];
-                  [_appDelegate restart];
+                  dispatch_semaphore_signal(_semaphore);
            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                NSLog(@"Failure creating album!");
+               dispatch_semaphore_signal(_semaphore);
            }
      ];
 }
@@ -198,7 +226,9 @@
 }
 
 - (void) saveSettings {
-    _startUp = [_startupCheckBox state];
+    _semaphore = dispatch_semaphore_create(0);
+    _httpClient.completionQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _globals.startUp = [_startupCheckBox state];
     _globals.titleText = [_titleTextBox stringValue];
     _globals.albumName = [_albumBox stringValue];
     _globals.albumIsPrivate = [_albumPrivacyCheckBox state];
@@ -206,7 +236,7 @@
     [self savePostUploads];
     [self checkAlbum];
     
-    [_defaults setInteger:_startUp forKey:@"startUp"];
+    [_defaults setInteger:_globals.startUp forKey:@"startUp"];
     [_defaults setObject:_globals.titleText forKey:@"titleText"];
     [_defaults setURL:_globals.screenshotPath forKey:@"screenshotPath"];
     [_defaults setURL:_globals.archivePath forKey:@"archivePath"];
@@ -216,6 +246,7 @@
     [_defaults setObject:_globals.albumName forKey:@"albumName"];
     [_defaults setObject:_globals.albumID forKey:@"albumID"];
     [_defaults setInteger:_globals.albumIsPrivate forKey:@"albumIsPrivate"];
+    dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
     NSLog(@"Saving settings...");
     [_defaults synchronize];
     
@@ -227,9 +258,9 @@
 }
 
 - (IBAction)apply:(id)sender {
+    [_settingsWindow close];
     [self saveSettings];
     [_appDelegate restart];
-    [_settingsWindow close];
 }
 
 - (IBAction)showFilePicker:(id)sender {
@@ -297,8 +328,6 @@
 }
 
 - (IBAction)debug:(id)sender {
-    [self saveSettings];
-    [self checkAlbum];
 }
 
 @end

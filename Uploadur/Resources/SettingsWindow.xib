@@ -7,7 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="SettingsWindowController">
             <connections>
                 <outlet property="accountLabel" destination="sM3-ye-tcV" id="FJL-aJ-MgD"/>
-                <outlet property="albumBox" destination="ao1-lc-tcT" id="CYI-GM-ROA"/>
+                <outlet property="albumBox" destination="nct-qr-ie6" id="azZ-DC-faq"/>
                 <outlet property="albumLabel" destination="Wt7-2b-Vjl" id="7qS-8P-WNw"/>
                 <outlet property="albumPrivacyCheckBox" destination="Vqy-83-I3g" id="O7t-3F-ggO"/>
                 <outlet property="archivePathPopup" destination="qFl-5O-oi1" id="CPa-Y0-upg"/>
@@ -41,11 +41,11 @@
                         <tabViewItems>
                             <tabViewItem label="General" identifier="1" id="8YL-0t-WdY">
                                 <view key="view" ambiguous="YES" id="FhW-it-W6r">
-                                    <rect key="frame" x="10" y="33" width="208" height="0.0"/>
+                                    <rect key="frame" x="10" y="33" width="348" height="222"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mn0-HT-xCT">
-                                            <rect key="frame" x="10" y="-216" width="327" height="32"/>
+                                            <rect key="frame" x="10" y="6" width="327" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Okay" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="40x-bL-uvY">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -56,7 +56,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3TN-e7-gcU">
-                                            <rect key="frame" x="15" y="-26" width="165" height="18"/>
+                                            <rect key="frame" x="15" y="196" width="165" height="18"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="Start Uploadur at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="H0c-5F-xnM">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -67,7 +67,7 @@
                                             </connections>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-Cp-rJ5">
-                                            <rect key="frame" x="14" y="-59" width="87" height="17"/>
+                                            <rect key="frame" x="14" y="163" width="87" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="After upload:" id="V9X-Wh-rSG">
                                                 <font key="font" metaFont="system"/>
@@ -76,7 +76,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pT0-Ml-SZc">
-                                            <rect key="frame" x="28" y="-123" width="208" height="58"/>
+                                            <rect key="frame" x="28" y="99" width="208" height="58"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             <size key="cellSize" width="193" height="18"/>
@@ -112,16 +112,16 @@
                                             </cells>
                                         </matrix>
                                         <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="4x3-mS-YKg">
-                                            <rect key="frame" x="16" y="-37" width="315" height="5"/>
+                                            <rect key="frame" x="16" y="185" width="315" height="5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <font key="titleFont" metaFont="system"/>
                                         </box>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXF-hd-vec">
-                                            <rect key="frame" x="244" y="-111" width="82" height="32"/>
+                                            <rect key="frame" x="244" y="111" width="82" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <buttonCell key="cell" type="push" title="Debug" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bA8-0D-UyF">
+                                            <buttonCell key="cell" type="push" title="Debug" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="bA8-0D-UyF">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -130,7 +130,7 @@
                                             </connections>
                                         </button>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TXP-UT-ECY">
-                                            <rect key="frame" x="16" y="-178" width="304" height="22"/>
+                                            <rect key="frame" x="16" y="44" width="304" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" bezelStyle="round" id="Vkv-ft-pe1">
                                                 <font key="font" metaFont="system"/>
@@ -139,7 +139,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ca6-zh-RGQ">
-                                            <rect key="frame" x="15" y="-148" width="223" height="17"/>
+                                            <rect key="frame" x="15" y="74" width="223" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Title text for uploaded screenshots" id="Rj0-3Y-JQU">
                                                 <font key="font" metaFont="system"/>
@@ -279,15 +279,6 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ao1-lc-tcT">
-                                            <rect key="frame" x="110" y="90" width="181" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" bezelStyle="round" id="dTw-GK-doG">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJK-Ww-2cN">
                                             <rect key="frame" x="253" y="39" width="84" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -332,6 +323,18 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
+                                        <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nct-qr-ie6">
+                                            <rect key="frame" x="110" y="87" width="225" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="TJP-gI-5NW">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>Item</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                        </comboBox>
                                     </subviews>
                                 </view>
                             </tabViewItem>

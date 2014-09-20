@@ -30,7 +30,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzY-wb-cod">
-                        <rect key="frame" x="6" y="69" width="74" height="17"/>
+                        <rect key="frame" x="6" y="69" width="123" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Version x.x" id="miR-96-U3d">
                             <font key="font" metaFont="system"/>

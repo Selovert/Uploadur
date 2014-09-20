@@ -25,6 +25,7 @@
 @property NSString *albumName;
 @property NSString *albumID;
 @property NSInteger albumIsPrivate;
+@property NSInteger startUp;
 
 - (void) loadSettings;
 - (void) saveAccessToken;
