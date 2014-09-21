@@ -103,7 +103,7 @@
 }
 
 - (void) updateAlbums {
-    if ((_globals.refreshToken) && (![_globals.albumName isEqualToString:@""])) {
+    if (_globals.refreshToken) {
         [_albums removeAllObjects];
         [_httpClient.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",_globals.accessToken] forHTTPHeaderField:@"Authorization"];
         [_httpClient GET:@"https://api.imgur.com/3/account/me/albums/"
@@ -153,6 +153,9 @@
                      dispatch_semaphore_signal(_semaphore);
                  }
          ];
+    }
+    else {
+        dispatch_semaphore_signal(_semaphore);
     }
 }
 
