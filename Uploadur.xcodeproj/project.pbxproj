@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		476D485519B08F5800BF30A2 /* AppKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 476D485419B08F5800BF30A2 /* AppKeys.plist */; };
 		479EE5D819B083DF00DB9E07 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
-		479EE5DA19B084BD00DB9E07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
+		479EE5DA19B084BD00DB9E07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		479EE5DC19B0899600DB9E07 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 479EE5DB19B0899600DB9E07 /* dsa_pub.pem */; };
 		47DCE8FE19A274F300D8A094 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DCE8FD19A274F300D8A094 /* Cocoa.framework */; };
 		47DCE90819A274F300D8A094 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE90619A274F300D8A094 /* InfoPlist.strings */; };
@@ -317,7 +317,7 @@
 		47DCE8F219A274F300D8A094 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Tassilo Selover-Stephan";
 				TargetAttributes = {
 					47DCE91A19A274F300D8A094 = {

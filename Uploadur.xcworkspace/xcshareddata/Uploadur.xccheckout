@@ -10,6 +10,8 @@
 	<string>Uploadur</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>2218F0846D1FDB9E0AE6D5A7AEB4C403814531C3</key>
+		<string>https://github.com/Selovert/Uploadur.git</string>
 		<key>2C66343F-B0B1-4026-B4E5-3DE417257F30</key>
 		<string>https://github.com/Selovert/Uploadur.git</string>
 	</dict>
@@ -17,17 +19,27 @@
 	<string>Uploadur.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>2C66343F-B0B1-4026-B4E5-3DE417257F30</key>
+		<key>2218F0846D1FDB9E0AE6D5A7AEB4C403814531C3</key>
 		<string>..</string>
+		<key>2C66343F-B0B1-4026-B4E5-3DE417257F30</key>
+		<string>../../Uploadur-python</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Selovert/Uploadur.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>2C66343F-B0B1-4026-B4E5-3DE417257F30</string>
+	<string>2218F0846D1FDB9E0AE6D5A7AEB4C403814531C3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2218F0846D1FDB9E0AE6D5A7AEB4C403814531C3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Uploadur</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

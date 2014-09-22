@@ -39,7 +39,7 @@
         NSUInteger newCount = [files count];
         NSUInteger oldCount = [_files count];
         if (newCount > oldCount) {
-            [_uploadController uploadWrapper:[[files lastObject] objectForKey:@"path"]];
+            [_uploadController uploadWrapper:[[files firstObject] objectForKey:@"path"]];
             
         }
     }
@@ -52,11 +52,11 @@
 }
 
 //This is reusable method which takes folder path and returns sorted file list
-- (NSArray*)getSortedFilesFromFolder: (NSString*)folderPath
+-(NSArray*)getSortedFilesFromFolder: (NSString*)folderPath
 {
     NSError *error = nil;
-    NSArray* filesArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:&error];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF EndsWith '.png'"];//Take only png file
+    NSArray* filesArray = [_filemgr contentsOfDirectoryAtPath:folderPath error:&error];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF EndsWith '.png'"];
     filesArray =  [filesArray filteredArrayUsingPredicate:predicate];
     
     // sort by creation date
@@ -66,7 +66,7 @@
         
         if (![file isEqualToString:@".DS_Store"]) {
             NSString* filePath = [folderPath stringByAppendingPathComponent:file];
-            NSDictionary* properties = [[NSFileManager defaultManager]
+            NSDictionary* properties = [_filemgr
                                         attributesOfItemAtPath:filePath
                                         error:&error];
             NSDate* modDate = [properties objectForKey:NSFileModificationDate];
@@ -79,7 +79,24 @@
         }
     }
     
-    return filesAndProperties;
+    // Sort using a block - order inverted as we want latest date first
+    NSArray* sortedFiles = [filesAndProperties sortedArrayUsingComparator:
+                            ^(id path1, id path2)
+                            {
+                                // compare
+                                NSComparisonResult comp = [[path1 objectForKey:@"lastModDate"] compare:
+                                                           [path2 objectForKey:@"lastModDate"]];
+                                // invert ordering
+                                if (comp == NSOrderedDescending) {
+                                    comp = NSOrderedAscending;
+                                }
+                                else if(comp == NSOrderedAscending){
+                                    comp = NSOrderedDescending;
+                                }
+                                return comp;
+                            }];
+    
+    return sortedFiles;
     
 }
 
