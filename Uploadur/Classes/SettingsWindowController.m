@@ -3,8 +3,12 @@
 //  Uploadur
 //
 //  Created by Tassilo Selover-Stephan on 8/18/14.
-//  Copyright (c) 2014 Tassilo Selover-Stephan. All rights reserved.
+//  Copyright (c) 2014 Tassilo Selover-Stephan.
 //
+//  Released under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version. See <http://www.gnu.org/licenses/> for
+//  details.
 
 #import <AFHTTPRequestOperationManager.h>
 
@@ -245,6 +249,8 @@
     [_defaults setURL:_globals.archivePath forKey:@"archivePath"];
     [_defaults setInteger:_globals.postUpload forKey:@"postUpload"];
     [_defaults setObject:_globals.refreshToken forKey:@"refreshToken"];
+    [_defaults setObject:_globals.accessToken forKey:@"accessToken"];
+    [_defaults setObject:_globals.expiresAt forKey:@"expiresAt"];
     [_defaults setObject:_globals.userName forKey:@"userName"];
     [_defaults setObject:_globals.albumName forKey:@"albumName"];
     [_defaults setObject:_globals.albumID forKey:@"albumID"];
@@ -326,6 +332,7 @@
 - (IBAction)logout:(id)sender {
     _globals.accessToken = nil;
     _globals.refreshToken = nil;
+    _globals.expiresAt = nil;
     [self checkUser];
     [self updateWindow];
 }

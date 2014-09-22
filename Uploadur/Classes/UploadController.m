@@ -3,8 +3,12 @@
 //  Uploadur
 //
 //  Created by Tassilo Selover-Stephan on 8/19/14.
-//  Copyright (c) 2014 Tassilo Selover-Stephan. All rights reserved.
+//  Copyright (c) 2014 Tassilo Selover-Stephan.
 //
+//  Released under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version. See <http://www.gnu.org/licenses/> for
+//  details.
 
 #import <AFHTTPRequestOperationManager.h>
 
@@ -75,16 +79,18 @@
         } else {
             [self uploadFailed:nil];
         }
-
-        [_httpClient POST:@"https://api.imgur.com/3/upload"
-           parameters: parameters
-              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  NSString *link = [[responseObject objectForKey:@"data"] objectForKey:@"link"];
-                  [self postUpload:link fileName:fileName];
-              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  [self uploadFailed:error];
-              }
-        ];
+        
+        if (parameters) {
+            [_httpClient POST:@"https://api.imgur.com/3/upload"
+               parameters: parameters
+                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                      NSString *link = [[responseObject objectForKey:@"data"] objectForKey:@"link"];
+                      [self postUpload:link fileName:fileName];
+                  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                      [self uploadFailed:error];
+                  }
+            ];
+        }
     } else {
         [self uploadFailed:nil];
     }
