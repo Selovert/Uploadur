@@ -22,7 +22,7 @@
 		<key>2218F0846D1FDB9E0AE6D5A7AEB4C403814531C3</key>
 		<string>..</string>
 		<key>2C66343F-B0B1-4026-B4E5-3DE417257F30</key>
-		<string>../../Uploadur-python</string>
+		<string>..-python</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Selovert/Uploadur.git</string>
