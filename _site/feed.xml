@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your Name</title>
+    <description>Web Developer from Somewhere</description>
+    <link>http://selovert.github.io</link>
+    <atom:link href="http://selovert.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>You&#39;re up and running!</title>
+        <description>&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below &lt;img class=&quot;emoji&quot; title=&quot;:point_down:&quot; alt=&quot;:point_down:&quot; src=&quot;https://assets.github.com/images/icons/emoji/unicode/1f447.png&quot; height=&quot;20&quot; width=&quot;20&quot; align=&quot;absmiddle&quot; /&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Uploadur/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the &lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;Jekyll Now repository&lt;/a&gt; on GitHub.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Mar 2014 00:00:00 +0100</pubDate>
+        <link>http://selovert.github.io/Hello-World/</link>
+        <guid isPermaLink="true">http://selovert.github.io/Hello-World/</guid>
+      </item>
+    
+  </channel>
+</rss>
