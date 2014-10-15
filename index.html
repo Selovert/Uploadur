@@ -1,18 +1,95 @@
 ---
+title: "Uploadur"
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">    
-      
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+<div class='row'>
+  <div class='large-8 large-centered columns'>
+    <div class='centered-container'>
+      <img id='uploadur-logo' src='{{ site.baseurl }}/images/uploadur.png'>
+      <h2>Uploadur</h2>
+      <i>Automatically upload your screenshots to Imgur</i>
+      <hr>
+    </div>
+    <div class='button-container centered-container'>
+      <a class='button download radius' href='http://tassilo.tk/Binaries/Uploadur.zip'>Download the app</a>
+      <a class='button radius' href='https://github.com/Selovert/Uploadur'>View source</a>
+    </div>
+    <hr>
+    <div class='markdown' id='features'>
+      <h3>Features</h3>
 
-      <div class="entry">
-        {{ post.content | truncatewords:40}}
+      <ul>
+      <li>Automatically uploads screenshots taken <a href="http://support.apple.com/kb/ht5775">in OSX</a>.</li>
+      <li>Allows configuration of the screenshot path, saving you the effort of using <a href="http://lifehacker.com/quickly-change-os-xs-default-screenshot-format-and-loc-1489014578">console commands</a>.</li>
+      <li>Log into your Imgur account and upload images into an album of your choosing.</li>
+      </ul>
+    </div>
+    <hr>
+    <div class='centered-container'>
+      <ul class='clearing-thumbs' data-clearing='' id='screenshots'>
+        <li>
+          <a href='{{ site.baseurl }}/images/Screen Shot 1.png'>
+            <img data-caption='Uploadur can be found in the menu bar.' src='{{ site.baseurl }}/images/Screen Shot 1 thumb.png'>
+          </a>
+        </li>
+        <li>
+          <a href='{{ site.baseurl }}/images/Screen Shot 2.png'>
+            <img data-caption='After uploading a screenshot, a notification will appear, and the Imgur URL will be copied to the clipboard.' src='{{ site.baseurl }}/images/Screen Shot 2 thumb.png'>
+          </a>
+        </li>
+        <li>
+          <a href='{{ site.baseurl }}/images/Screen Shot 3.png'>
+            <img data-caption='The last uploaded image can be seen and opened through the menu.' src='{{ site.baseurl }}/images/Screen Shot 3 thumb.png'>
+          </a>
+        </li>
+        <li>
+          <a href='{{ site.baseurl }}/images/Screen Shot 4.png'>
+            <img data-caption='Uploadur settings can be modified in this window.' src='{{ site.baseurl }}/images/Screen Shot 4 thumb.png'>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class='markdown'>
+      <hr />
+
+      <h3>How to Use</h3>
+
+      <h5>Taking Screenshots</h5>
+
+      <p>Using Uploadur is as simple as <a href="http://support.apple.com/kb/ht5775">taking a screenshot</a>.</p>
+
+      <p>After you take the screenshot, the Uploadur icon <img src="https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/Images.xcassets/icon.imageset/uploadur.png" alt="Uploadur Icon" /> should become green <img src="https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/Images.xcassets/icon-dl.imageset/uploadur-dl.png" alt="Uploadur-dl Icon" />, followed by a notification that the screenshot has been uploaded.
+      <img src="{{ site.baseurl }}/images/notification.png" alt="Notification" /></p>
+
+      <h5>Connecting Your Account</h5>
+
+      <p>If you have an Imgur account, and would like pictures to be uploaded using this account, you can connect your account to the app.</p>
+
+      <p>To do so, click "Get PIN using web browser", and log into Imgur. Copy the PIN given to you by Imgur, and then click the "Authorize" button to log in.</p>
+    </div>
+    <div class='slider-container'>
+      <div class='settings-slider'>
+        <div class='general settings-screenshot'>
+          <img src='{{ site.baseurl }}/images/settings-general.png'>
+        </div>
+        <div class='folders settings-screenshot'>
+          <img src='{{ site.baseurl }}/images/settings-folders.png'>
+        </div>
+        <div class='account settings-screenshot'>
+          <img src='{{ site.baseurl }}/images/settings-account.png'>
+        </div>
       </div>
-      
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+    </div>
+    <div class='markdown'>
+      <hr />
+
+      <h1>License</h1>
+
+      <p>Uploadur is released under the terms of the GNU General Public License as published by
+      the Free Software Foundation, either version 3 of the License, or
+      (at your option) any later version. See <a href="http://www.gnu.org/licenses/">here</a> for
+      details.</p>
+    </div>
+  </div>
 </div>
