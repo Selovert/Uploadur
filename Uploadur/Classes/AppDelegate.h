@@ -16,12 +16,14 @@
 @class NotificationController;
 @class UploadController;
 @class Globals;
+@class StatusItemView;
 
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong, nonatomic) NSStatusItem *statusItem;
+@property StatusItemView *statusItemView;
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (weak) IBOutlet NSMenuItem *imageItem;
 @property (weak) IBOutlet NSMenuItem *infoItem;

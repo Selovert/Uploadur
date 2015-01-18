@@ -39,7 +39,7 @@
         NSUInteger newCount = [files count];
         NSUInteger oldCount = [_files count];
         if (newCount > oldCount) {
-            [_uploadController uploadWrapper:[[files firstObject] objectForKey:@"path"]];
+            [_uploadController uploadWrapper:[[files firstObject] objectForKey:@"path"] foreignFile:NO];
             
         }
     }

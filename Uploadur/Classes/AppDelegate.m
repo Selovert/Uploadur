@@ -17,21 +17,25 @@
 #import "DirectoryMonitor.h"
 #import "NotificationController.h"
 #import "UploadController.h"
+#import "StatusItemView.h"
 
 @implementation AppDelegate
 
+
 - (void) awakeFromNib {
     _defaultIcon = @"icon";
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    
+    // Install icon into the menu bar
+//    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:24];
+    self.statusItemView = [[StatusItemView alloc] initWithStatusItem:self.statusItem];
     [self changeIcon:_defaultIcon setToDefault:NO];
-    [_statusItem setAlternateImage:[[NSBundle mainBundle] imageForResource:@"icon-white"]];
-    
-    self.statusItem.menu = self.statusMenu;
-    self.statusItem.highlightMode = YES;
+    [self.statusItemView setAlternateImage:[NSImage imageNamed:@"icon-white"]];
+    [self.statusItemView setMenu:self.statusMenu];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
+    
     _globals = [[Globals alloc] init];
     _notificationController = [[NotificationController alloc] init];
     _uploadController = [[UploadController alloc] initWithAppDelegate:self notificationController:_notificationController globals:_globals];
@@ -44,12 +48,13 @@
     _settingsWindowController.appDelegate = self;
     _settingsWindowController.globals = _globals;
     _aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindow"];
+    _statusItemView.uploadController = _uploadController;
     
 }
 
 - (void) changeIcon:(NSString *)icon setToDefault:(BOOL)def {
     NSImage *image = [[NSBundle mainBundle] imageForResource:icon];
-    [self.statusItem setImage:image];
+    [self.statusItemView setImage:image];
     if (def) {
         _defaultIcon = icon;
     }

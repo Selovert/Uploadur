@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6245"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -671,16 +672,10 @@
         </menu>
         <menu id="hly-CZ-FwI" userLabel="Status Menu">
             <items>
-                <menuItem title="About" id="3f8-xO-UVO">
+                <menuItem title="About Uploadur" id="3f8-xO-UVO">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="about:" target="Voe-Tx-rLC" id="PSB-PC-cfT"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Check for Update" id="imQ-B5-d14">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="checkForUpdates:" target="mie-D0-0XK" id="NSb-cX-1LV"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="LGM-5W-Dgb"/>
@@ -698,14 +693,20 @@
                     </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="eiN-i2-SiH"/>
-                <menuItem title="Preferences" id="AVe-DX-Wa1">
+                <menuItem title="Preferences..." id="AVe-DX-Wa1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openSettings:" target="Voe-Tx-rLC" id="GfJ-m7-XTB"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Check for Update" id="imQ-B5-d14">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="checkForUpdates:" target="mie-D0-0XK" id="NSb-cX-1LV"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="bKU-Wx-7ZD"/>
-                <menuItem title="Quit" id="FYD-vt-bZD">
+                <menuItem title="Quit Uploadur" id="FYD-vt-bZD">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="terminate:" target="-3" id="ofj-fU-jXJ"/>

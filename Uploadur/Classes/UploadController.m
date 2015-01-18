@@ -42,10 +42,18 @@
     }
 }
 
-- (void) uploadWrapper:(NSString *)fileName {
+- (void) uploadWrapper:(NSString *)fileName foreignFile:(BOOL)foreign {
     [_appDelegate changeIcon:@"icon-dl" setToDefault: NO];
     if ([self checkInternet]) {
-        _filePath = [NSString stringWithFormat:@"%@/%@",[_globals.screenshotPath path],fileName];
+        self.foreignFile = NO;
+        if (foreign) {
+            self.foreignFile = YES;
+            _filePath = fileName;
+            NSURL *tempURL = [NSURL fileURLWithPath:fileName];
+            fileName = [[tempURL pathComponents] lastObject];
+        } else {
+            _filePath = [NSString stringWithFormat:@"%@/%@",[_globals.screenshotPath path],fileName];
+        }
         NSLog(@"%@",_filePath);
         if (_globals.accessTokenIsExpired) {
             [self refreshUser:fileName];
@@ -101,7 +109,9 @@
     _appDelegate.URL = imageURL;
     [_appDelegate updateCurrentImage:_filePath];
     [_appDelegate changeIcon:_appDelegate.defaultIcon setToDefault:NO];
-    [self manageFile:fileName];
+    if (!self.foreignFile) {
+        [self manageFile:fileName];
+    }
     [_notificationController notify:@"Uploadur" message:imageURL link:imageURL];
 }
 
