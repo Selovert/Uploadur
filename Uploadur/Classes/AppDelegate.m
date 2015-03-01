@@ -25,7 +25,6 @@
 - (void) awakeFromNib {
     _defaultIcon = @"icon";
     // Install icon into the menu bar
-//    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:24];
     self.statusItemView = [[StatusItemView alloc] initWithStatusItem:self.statusItem];
     [self changeIcon:_defaultIcon setToDefault:NO];
@@ -60,7 +59,7 @@
     }
 }
 
-- (void) updateCurrentImage:(NSString *)path {
+- (void) updateCurrentImage {
     [_infoItem setEnabled:YES];
     [_infoItem setTitle:@"Last Upload"];
     [_imageItem setTitle:@""];
@@ -68,7 +67,7 @@
     NSSize size;
     CGFloat width;
     CGFloat height;
-    NSImage *image = [[NSImage alloc] initByReferencingFile:path];
+    NSImage *image = [[NSImage alloc] initByReferencingFile:_lastUploadPath];
     CGFloat oldWidth = [image size].width;
     CGFloat oldHeight = [image size].height;
     if ((oldWidth > 300) || (oldHeight > 300)) {
@@ -85,6 +84,7 @@
     }
     [_imageItem setImage:image];
     
+    [_openInFinderItem setHidden:NO];
 }
 
 - (void) restart {
@@ -105,6 +105,15 @@
 - (IBAction)info:(id)sender {
     if (_URL) {
         [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:_URL]];
+    }
+}
+
+- (IBAction)openInFinder:(id)sender {
+    if ((_globals.postUpload != 1) && (_lastUploadPath != nil)) {
+        NSURL *fileURL = [NSURL fileURLWithPath: _lastUploadPath];
+        NSArray *fileURLs = [NSArray arrayWithObjects:fileURL, nil];
+        [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
+        
     }
 }
 

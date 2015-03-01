@@ -26,6 +26,7 @@
 @property StatusItemView *statusItemView;
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (weak) IBOutlet NSMenuItem *imageItem;
+@property (weak) IBOutlet NSMenuItem *openInFinderItem;
 @property (weak) IBOutlet NSMenuItem *infoItem;
 
 @property SettingsWindowController *settingsWindowController;
@@ -37,12 +38,14 @@
 
 @property NSString *URL;
 @property NSString *defaultIcon;
+@property NSString *lastUploadPath;
 
 - (IBAction)about:(id)sender;
 - (IBAction)openSettings:(id)sender;
 - (IBAction)info:(id)sender;
+- (IBAction)openInFinder:(id)sender;
 
-- (void) updateCurrentImage:(NSString *)path;
+- (void) updateCurrentImage;
 - (void) changeIcon:(NSString *)icon setToDefault:(BOOL)def;
 - (void) restart;
 

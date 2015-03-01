@@ -107,7 +107,8 @@
 - (void) postUpload:(NSString *)imageURL fileName:(NSString *)fileName {
     [self copyText:imageURL];
     _appDelegate.URL = imageURL;
-    [_appDelegate updateCurrentImage:_filePath];
+    _appDelegate.lastUploadPath = _filePath;
+    [_appDelegate updateCurrentImage];
     [_appDelegate changeIcon:_appDelegate.defaultIcon setToDefault:NO];
     if (!self.foreignFile) {
         [self manageFile:fileName];
@@ -120,6 +121,7 @@
     if (_globals.postUpload == 0) {
         if ([_filemgr isReadableFileAtPath:_filePath]) {
             [_filemgr moveItemAtPath:_filePath toPath:archivePath error:nil];
+            _appDelegate.lastUploadPath = archivePath;
         } else {
             NSLog(@"Error moving file");
         }
