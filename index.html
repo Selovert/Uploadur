@@ -20,8 +20,9 @@ layout: default
       <h3>Features</h3>
 
       <ul>
-      <li>Automatically uploads screenshots taken <a href="http://support.apple.com/kb/ht5775">in OSX</a>.</li>
+      <li>Automatically uploads screenshots taken <a href="http://support.apple.com/kb/ht5775">in OSX</a> to Imgur.</li>
       <li>Upload images by dragging & dropping them onto the icon on the menu bar</li>
+      <li>Upload images from URL
       <li>Allows configuration of the screenshot path, saving you the effort of using <a href="http://lifehacker.com/quickly-change-os-xs-default-screenshot-format-and-loc-1489014578">console commands</a>.</li>
       <li>Log into your Imgur account and upload images into an album of your choosing.</li>
       </ul>
@@ -36,12 +37,12 @@ layout: default
         </li>
         <li>
           <a href='{{ site.baseurl }}/images/Screen Shot 2.png'>
-            <img data-caption='After uploading a screenshot, a notification will appear, and the Imgur URL will be copied to the clipboard.' src='{{ site.baseurl }}/images/Screen Shot 2 thumb.png'>
+            <img data-caption='The last uploaded image can be seen and opened through the menu or by right-clicking the Uploadur icon.' src='{{ site.baseurl }}/images/Screen Shot 2 thumb.png'>
           </a>
         </li>
         <li>
           <a href='{{ site.baseurl }}/images/Screen Shot 3.png'>
-            <img data-caption='The last uploaded image can be seen and opened through the menu.' src='{{ site.baseurl }}/images/Screen Shot 3 thumb.png'>
+            <img data-caption='Images can also by uploaded from a URL.' src='{{ site.baseurl }}/images/Screen Shot 3 thumb.png'>
           </a>
         </li>
         <li>
@@ -60,7 +61,7 @@ layout: default
 
       <p>Using Uploadur is as simple as <a href="http://support.apple.com/kb/ht5775">taking a screenshot</a>.</p>
 
-      <p>After you take the screenshot, the Uploadur icon <img src="https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/Images.xcassets/icon.imageset/uploadur.png" alt="Uploadur Icon" /> should become green <img src="https://raw.githubusercontent.com/Selovert/Uploadur/master/Uploadur/Resources/Images.xcassets/icon-dl.imageset/uploadur-dl.png" alt="Uploadur-dl Icon" />, followed by a notification that the screenshot has been uploaded.
+      <p>After you take the screenshot, the Uploadur icon <img src="/images/uploadur.svg" alt="Uploadur Icon" class="inline-icon"/> should indicate an upload is in progress <img src="/images/uploadur-dl.gif" alt="Uploadur-dl Icon" class="inline-icon"/>, followed by a notification that the screenshot has been uploaded. The Imgur URL will be copied automatically to the clipboard.
       <img src="{{ site.baseurl }}/images/notification.png" alt="Notification" /></p>
 
       <h5>Connecting Your Account</h5>
