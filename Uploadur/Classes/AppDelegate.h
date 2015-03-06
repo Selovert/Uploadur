@@ -16,20 +16,23 @@
 @class NotificationController;
 @class UploadController;
 @class Globals;
-@class StatusItemView;
+@class StatusItemDelegate;
+@class PopoverController;
+@class URLInputPopover;
 
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (strong, nonatomic) NSStatusItem *statusItem;
-@property StatusItemView *statusItemView;
+@property StatusItemDelegate *statusItemDelegate;
 @property (weak) IBOutlet NSMenu *statusMenu;
-@property (weak) IBOutlet NSMenuItem *imageItem;
-@property (weak) IBOutlet NSMenuItem *openInFinderItem;
-@property (weak) IBOutlet NSMenuItem *infoItem;
+@property (weak) IBOutlet NSMenuItem *lastUploadItem;
+@property (weak) IBOutlet NSMenuItem *uploadFromURLItem;
 
 @property SettingsWindowController *settingsWindowController;
+@property PopoverController *popoverController;
+@property URLInputPopover *urlInputPopover;
 @property AboutWindowController *aboutWindowController;
 @property DirectoryMonitor *directoryMonitor;
 @property NotificationController *notificationController;
@@ -39,14 +42,19 @@
 @property NSString *URL;
 @property NSString *defaultIcon;
 @property NSString *lastUploadPath;
+@property NSEvent *popoverTransiencyMonitor;
 
 - (IBAction)about:(id)sender;
 - (IBAction)openSettings:(id)sender;
 - (IBAction)info:(id)sender;
-- (IBAction)openInFinder:(id)sender;
+- (IBAction)lastUpload:(id)sender;
+- (IBAction)uploadFromURL:(id)sender;
 
 - (void) updateCurrentImage;
 - (void) changeIcon:(NSString *)icon setToDefault:(BOOL)def;
 - (void) restart;
+- (void) openInFinder;
+- (void) openPopover;
+- (void) openURLPopover;
 
 @end

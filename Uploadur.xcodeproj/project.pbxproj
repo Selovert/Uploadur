@@ -11,6 +11,11 @@
 		479EE5D819B083DF00DB9E07 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; };
 		479EE5DA19B084BD00DB9E07 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 479EE5D719B083DF00DB9E07 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		479EE5DC19B0899600DB9E07 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 479EE5DB19B0899600DB9E07 /* dsa_pub.pem */; };
+		47AE10551AA465B20030C616 /* PopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE10531AA465B20030C616 /* PopoverController.m */; };
+		47AE10561AA465B20030C616 /* Popover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47AE10541AA465B20030C616 /* Popover.xib */; };
+		47B807D41AA734CA00714F50 /* StatusItemDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B807D31AA734CA00714F50 /* StatusItemDelegate.m */; };
+		47D4B3C21AA794DE00067B00 /* URLInputPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D4B3C01AA794DE00067B00 /* URLInputPopover.m */; };
+		47D4B3C31AA794DE00067B00 /* URLInputPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47D4B3C11AA794DE00067B00 /* URLInputPopover.xib */; };
 		47DCE8FE19A274F300D8A094 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47DCE8FD19A274F300D8A094 /* Cocoa.framework */; };
 		47DCE90819A274F300D8A094 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47DCE90619A274F300D8A094 /* InfoPlist.strings */; };
 		47DCE90A19A274F300D8A094 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCE90919A274F300D8A094 /* main.m */; };
@@ -33,7 +38,6 @@
 		47DCEA0219A7DA3200D8A094 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0119A7DA3200D8A094 /* Reachability.m */; };
 		47DCEA0919B06D5500D8A094 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47DCEA0719B06D5500D8A094 /* AboutWindowController.m */; };
 		47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47DCEA0819B06D5500D8A094 /* AboutWindow.xib */; };
-		47E9E1D51A5EC1400017EFF2 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47E9E1D41A5EC1400017EFF2 /* StatusItemView.m */; };
 		FB07FE01DBF94AF1ABBC8086 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2151F64575EF40F68A6C155B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,14 @@
 		476D485419B08F5800BF30A2 /* AppKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKeys.plist; sourceTree = "<group>"; };
 		479EE5D719B083DF00DB9E07 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		479EE5DB19B0899600DB9E07 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		47AE10521AA465B20030C616 /* PopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverController.h; sourceTree = "<group>"; };
+		47AE10531AA465B20030C616 /* PopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverController.m; sourceTree = "<group>"; };
+		47AE10541AA465B20030C616 /* Popover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Popover.xib; path = Classes/Popover.xib; sourceTree = "<group>"; };
+		47B807D21AA734CA00714F50 /* StatusItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemDelegate.h; sourceTree = "<group>"; };
+		47B807D31AA734CA00714F50 /* StatusItemDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemDelegate.m; sourceTree = "<group>"; };
+		47D4B3BF1AA794DE00067B00 /* URLInputPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLInputPopover.h; sourceTree = "<group>"; };
+		47D4B3C01AA794DE00067B00 /* URLInputPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLInputPopover.m; sourceTree = "<group>"; };
+		47D4B3C11AA794DE00067B00 /* URLInputPopover.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = URLInputPopover.xib; path = Classes/URLInputPopover.xib; sourceTree = "<group>"; };
 		47DCE8FA19A274F300D8A094 /* Uploadur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uploadur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DCE8FD19A274F300D8A094 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		47DCE90019A274F300D8A094 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,7 +88,7 @@
 		47DCE90B19A274F300D8A094 /* Uploadur-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uploadur-Prefix.pch"; sourceTree = "<group>"; };
 		47DCE90D19A274F300D8A094 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		47DCE90F19A274F300D8A094 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		47DCE91019A274F300D8A094 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		47DCE91019A274F300D8A094 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; wrapsLines = 1; };
 		47DCE91319A274F300D8A094 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		47DCE91B19A274F300D8A094 /* UploadurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UploadurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47DCE91C19A274F300D8A094 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -105,8 +117,6 @@
 		47DCEA0619B06D5500D8A094 /* AboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
 		47DCEA0719B06D5500D8A094 /* AboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
 		47DCEA0819B06D5500D8A094 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindow.xib; path = Resources/AboutWindow.xib; sourceTree = "<group>"; };
-		47E9E1D31A5EC1400017EFF2 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
-		47E9E1D41A5EC1400017EFF2 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		F1DA373A206344CBA70513E4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,14 +254,18 @@
 				47DCE9FC19A67EE900D8A094 /* Globals.m */,
 				47DCE93E19A3572400D8A094 /* NotificationController.h */,
 				47DCE93F19A3572400D8A094 /* NotificationController.m */,
-				47E9E1D31A5EC1400017EFF2 /* StatusItemView.h */,
-				47E9E1D41A5EC1400017EFF2 /* StatusItemView.m */,
+				47AE10521AA465B20030C616 /* PopoverController.h */,
+				47AE10531AA465B20030C616 /* PopoverController.m */,
 				47DCE93119A2831B00D8A094 /* SettingsWindowController.h */,
 				47DCE93219A2831B00D8A094 /* SettingsWindowController.m */,
 				47DCE93619A287A600D8A094 /* StartupController.h */,
 				47DCE93719A287A600D8A094 /* StartupController.m */,
+				47B807D21AA734CA00714F50 /* StatusItemDelegate.h */,
+				47B807D31AA734CA00714F50 /* StatusItemDelegate.m */,
 				47DCE94119A3E72D00D8A094 /* UploadController.h */,
 				47DCE94219A3E72D00D8A094 /* UploadController.m */,
+				47D4B3BF1AA794DE00067B00 /* URLInputPopover.h */,
+				47D4B3C01AA794DE00067B00 /* URLInputPopover.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -268,6 +282,8 @@
 		47E7C80A19B0BC0700685384 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				47AE10541AA465B20030C616 /* Popover.xib */,
+				47D4B3C11AA794DE00067B00 /* URLInputPopover.xib */,
 				47DCEA0819B06D5500D8A094 /* AboutWindow.xib */,
 				47DCE91219A274F300D8A094 /* MainMenu.xib */,
 				47DCE93319A2831B00D8A094 /* SettingsWindow.xib */,
@@ -356,10 +372,12 @@
 			files = (
 				479EE5DC19B0899600DB9E07 /* dsa_pub.pem in Resources */,
 				47DCE90819A274F300D8A094 /* InfoPlist.strings in Resources */,
+				47D4B3C31AA794DE00067B00 /* URLInputPopover.xib in Resources */,
 				47DCE93D19A355B000D8A094 /* Images.xcassets in Resources */,
 				47DCE93519A2831B00D8A094 /* SettingsWindow.xib in Resources */,
 				476D485519B08F5800BF30A2 /* AppKeys.plist in Resources */,
 				47DCEA0A19B06D5500D8A094 /* AboutWindow.xib in Resources */,
+				47AE10561AA465B20030C616 /* Popover.xib in Resources */,
 				47DCE90E19A274F300D8A094 /* Credits.rtf in Resources */,
 				47DCE91419A274F300D8A094 /* MainMenu.xib in Resources */,
 			);
@@ -413,7 +431,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47E9E1D51A5EC1400017EFF2 /* StatusItemView.m in Sources */,
+				47B807D41AA734CA00714F50 /* StatusItemDelegate.m in Sources */,
+				47D4B3C21AA794DE00067B00 /* URLInputPopover.m in Sources */,
 				47DCE9FD19A67EE900D8A094 /* Globals.m in Sources */,
 				47DCEA0919B06D5500D8A094 /* AboutWindowController.m in Sources */,
 				47DCE91119A274F300D8A094 /* AppDelegate.m in Sources */,
@@ -422,6 +441,7 @@
 				47DCE93419A2831B00D8A094 /* SettingsWindowController.m in Sources */,
 				47DCE93B19A29F8500D8A094 /* DirectoryMonitor.m in Sources */,
 				47DCE94319A3E72D00D8A094 /* UploadController.m in Sources */,
+				47AE10551AA465B20030C616 /* PopoverController.m in Sources */,
 				47DCEA0219A7DA3200D8A094 /* Reachability.m in Sources */,
 				47DCE90A19A274F300D8A094 /* main.m in Sources */,
 			);
@@ -564,6 +584,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Uploadur/Uploadur-Prefix.pch";
 				INFOPLIST_FILE = "Uploadur/Uploadur-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -582,6 +603,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Uploadur/Uploadur-Prefix.pch";
 				INFOPLIST_FILE = "Uploadur/Uploadur-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

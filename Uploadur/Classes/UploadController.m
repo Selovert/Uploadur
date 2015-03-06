@@ -17,6 +17,12 @@
 #import "UploadController.h"
 #import "Globals.h"
 
+@interface UploadController()
+
+@property int dlCount;
+
+@end
+
 @implementation UploadController
 
 - (UploadController *) initWithAppDelegate:(AppDelegate *)appDelegate
@@ -28,6 +34,7 @@
     _defaults = [NSUserDefaults standardUserDefaults];
     _filemgr = [NSFileManager defaultManager];
     _httpClient = [AFHTTPRequestOperationManager manager];
+    _dlCount = 0;
     return [super init];
 }
 
@@ -42,34 +49,56 @@
     }
 }
 
-- (void) uploadWrapper:(NSString *)fileName foreignFile:(BOOL)foreign {
-    [_appDelegate changeIcon:@"icon-dl" setToDefault: NO];
+- (void) uploadWrapper:(NSString *)fileName foreignFile:(int)foreign {
+    _animationTimer = [NSTimer scheduledTimerWithTimeInterval:0.3
+                                              target:self
+                                            selector:@selector(dlAnimate)
+                                            userInfo:nil
+                                             repeats:YES];
     if ([self checkInternet]) {
         self.foreignFile = NO;
-        if (foreign) {
+        if (foreign == 1) {
             self.foreignFile = YES;
             _filePath = fileName;
             NSURL *tempURL = [NSURL fileURLWithPath:fileName];
             fileName = [[tempURL pathComponents] lastObject];
+        } else if (foreign == 2) {
+            NSURL *tempURL = [NSURL URLWithString:fileName];
+            if (tempURL && tempURL.scheme && tempURL.host) {
+                self.foreignFile = 2;
+                _filePath = fileName;
+                fileName = [[tempURL pathComponents] lastObject];
+            } else {
+                [self cancelUpload:@"Upload failed: invalid URL."];
+                return;
+            }
         } else {
             _filePath = [NSString stringWithFormat:@"%@/%@",[_globals.screenshotPath path],fileName];
         }
         NSLog(@"%@",_filePath);
-        if (_globals.accessTokenIsExpired) {
-            [self refreshUser:fileName];
+        if ([self checkSize]) {
+            if (_globals.accessTokenIsExpired) {
+                [self refreshUser:fileName];
+            } else {
+                [self upload:fileName];
+            }
         } else {
-            [self upload:fileName];
+            [self cancelUpload:@"Upload failed: File too large."];
         }
     } else {
-        [_notificationController notify:@"Uploadur" message:@"Upload failed: no internet connection." link:nil];
-        [_appDelegate changeIcon:_appDelegate.defaultIcon setToDefault:NO];
+        [self cancelUpload:@"Upload failed: no internet connection."];
     }
 }
 
 - (void) upload:(NSString *)fileName {
     NSDictionary *parameters;
-    NSData *imageData = [[NSData alloc] initWithContentsOfFile:_filePath];
-    NSString *imageString = [imageData base64EncodedStringWithOptions:0];
+    NSString *imageString;
+    if (_foreignFile == 2) {
+        imageString = _filePath;
+    } else {
+        NSData *imageData = [[NSData alloc] initWithContentsOfFile:_filePath];
+        imageString = [imageData base64EncodedStringWithOptions:0];
+    }
     if (imageString) {
         if (_globals.refreshToken && _globals.accessToken && (!_globals.accessTokenIsExpired) && _globals.albumID) {
             [_httpClient.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@",_globals.accessToken] forHTTPHeaderField:@"Authorization"];
@@ -109,9 +138,12 @@
     _appDelegate.URL = imageURL;
     _appDelegate.lastUploadPath = _filePath;
     [_appDelegate updateCurrentImage];
+    [self stopAnimate];
     [_appDelegate changeIcon:_appDelegate.defaultIcon setToDefault:NO];
     if (!self.foreignFile) {
         [self manageFile:fileName];
+    } else if (self.foreignFile == 2) {
+        [_appDelegate.lastUploadItem setEnabled:NO];
     }
     [_notificationController notify:@"Uploadur" message:imageURL link:imageURL];
 }
@@ -137,9 +169,16 @@
 }
 
 - (void) uploadFailed:(NSError *)error {
+    [self stopAnimate];
     NSLog(@"Upload error: %@",[error.userInfo objectForKey:@"NSLocalizedDescription"]);
     [_appDelegate changeIcon:@"icon-error" setToDefault:NO];
     [_notificationController notify:@"Uploadur" message:@"Upload failed." link:nil];
+}
+
+- (void) cancelUpload:(NSString *)errorString {
+    [_notificationController notify:@"Uploadur" message:errorString link:nil];
+    [self stopAnimate];
+    [_appDelegate changeIcon:_appDelegate.defaultIcon setToDefault:NO];
 }
 
 - (void) copyText:(NSString *)text {
@@ -158,7 +197,11 @@
     }
 }
 
-
+- (BOOL) checkSize {
+    long long fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:_filePath error:nil] fileSize];
+    long long maxSize = 10276044;
+    return (fileSize < maxSize);
+}
 
 - (void) refreshUser:(NSString *)fileName {
     if ((_globals.accessToken) && (_globals.refreshToken)) {
@@ -178,10 +221,28 @@
                           [self upload:fileName];
                       }
                   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                      NSLog(@"Failure refreshing user!");
+                      [self uploadFailed:error];
                   }
          ];
     }
+}
+
+- (void) dlAnimate {
+    if (_dlCount == 0) {
+        _dlCount = 1;
+        [_appDelegate changeIcon:@"icon-dl-0" setToDefault:NO];
+    } else if (_dlCount == 1) {
+        _dlCount = 2;
+        [_appDelegate changeIcon:@"icon-dl-1" setToDefault:NO];
+    } else if (_dlCount == 2) {
+        _dlCount = 0;
+        [_appDelegate changeIcon:@"icon-dl-2" setToDefault:NO];
+    }
+}
+
+- (void) stopAnimate {
+    [_animationTimer invalidate];
+    _animationTimer = nil;
 }
 
 @end

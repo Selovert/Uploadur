@@ -17,19 +17,18 @@
 #import "DirectoryMonitor.h"
 #import "NotificationController.h"
 #import "UploadController.h"
-#import "StatusItemView.h"
+#import "StatusItemDelegate.h"
+#import "PopoverController.h"
+#import "URLInputPopover.h"
 
 @implementation AppDelegate
 
 
 - (void) awakeFromNib {
     _defaultIcon = @"icon";
-    // Install icon into the menu bar
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:24];
-    self.statusItemView = [[StatusItemView alloc] initWithStatusItem:self.statusItem];
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [self changeIcon:_defaultIcon setToDefault:NO];
-    [self.statusItemView setAlternateImage:[NSImage imageNamed:@"icon-white"]];
-    [self.statusItemView setMenu:self.statusMenu];
+    _statusItemDelegate = [[StatusItemDelegate alloc] initWithAppDelegate:self];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -47,24 +46,25 @@
     _settingsWindowController.appDelegate = self;
     _settingsWindowController.globals = _globals;
     _aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindow"];
-    _statusItemView.uploadController = _uploadController;
+    _popoverController = [[PopoverController alloc] init];
+    _popoverController.delegate = self;
+    _urlInputPopover = [[URLInputPopover alloc] init];
+    _urlInputPopover.delegate = self;
     
 }
 
 - (void) changeIcon:(NSString *)icon setToDefault:(BOOL)def {
-    NSImage *image = [[NSBundle mainBundle] imageForResource:icon];
-    [self.statusItemView setImage:image];
+    NSImage *image = [NSImage imageNamed:icon];
+    [image setTemplate:YES];
+    [self.statusItem.button setImage:image];
     if (def) {
         _defaultIcon = icon;
     }
 }
 
 - (void) updateCurrentImage {
-    [_infoItem setEnabled:YES];
-    [_infoItem setTitle:@"Last Upload"];
-    [_imageItem setTitle:@""];
-    
     NSSize size;
+    NSSize contentSize;
     CGFloat width;
     CGFloat height;
     NSImage *image = [[NSImage alloc] initByReferencingFile:_lastUploadPath];
@@ -81,10 +81,26 @@
         size.width = width;
         size.height = height;
         [image setSize:size];
+    } else {
+        size.width = [image size].width;
+        size.height = [image size].height;
     }
-    [_imageItem setImage:image];
+    if (size.width < 175) {
+        contentSize.width = 175;
+    } else {
+        contentSize.width = size.width;
+    }
     
-    [_openInFinderItem setHidden:NO];
+    if (size.height < 35) {
+        contentSize.height = 35;
+    } else {
+        contentSize.height = size.height;
+    }
+    
+    _popoverController.image = image;
+    _popoverController.contentSize = contentSize;
+    
+    [_lastUploadItem setEnabled:YES];
 }
 
 - (void) restart {
@@ -92,6 +108,48 @@
     [_globals loadSettings];
     _directoryMonitor.files = [_directoryMonitor getSortedFilesFromFolder:[_globals.screenshotPath path]];
 
+}
+
+- (void) openPopover {
+    if(_popoverTransiencyMonitor)
+    {
+        [NSEvent removeMonitor:_popoverTransiencyMonitor];
+        
+        _popoverTransiencyMonitor = nil;
+    }
+    
+    if (_popoverController.popover.shown) {
+        [_popoverController.popover close];
+    }
+    [self.popoverController.popover showRelativeToRect:[_statusItem.button frame]
+                                                ofView:_statusItem.button
+                                         preferredEdge:NSMinYEdge];
+    
+    if(_popoverTransiencyMonitor == nil)
+    {
+        _popoverTransiencyMonitor = [NSEvent addGlobalMonitorForEventsMatchingMask:NSLeftMouseUpMask handler:^(NSEvent* event)
+                                     {
+                                         [_popoverController.popover close];
+                                     }];
+    }
+}
+
+- (void) openURLPopover {
+    if (_urlInputPopover.popover.shown) {
+        [_urlInputPopover.popover close];
+    }
+    [self.urlInputPopover.popover showRelativeToRect:[_statusItem.button frame]
+                                                ofView:_statusItem.button
+                                         preferredEdge:NSMinYEdge];
+}
+
+- (void) openInFinder {
+    if ((_globals.postUpload != 1) && (_lastUploadPath != nil)) {
+        NSURL *fileURL = [NSURL fileURLWithPath: _lastUploadPath];
+        NSArray *fileURLs = [NSArray arrayWithObjects:fileURL, nil];
+        [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
+        
+    }
 }
 
 - (IBAction)about:(id)sender {
@@ -108,13 +166,14 @@
     }
 }
 
-- (IBAction)openInFinder:(id)sender {
-    if ((_globals.postUpload != 1) && (_lastUploadPath != nil)) {
-        NSURL *fileURL = [NSURL fileURLWithPath: _lastUploadPath];
-        NSArray *fileURLs = [NSArray arrayWithObjects:fileURL, nil];
-        [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
-        
-    }
+- (IBAction)lastUpload:(id)sender {
+    [self openPopover];
+}
+
+- (IBAction)uploadFromURL:(id)sender {
+    [self openURLPopover];
 }
 
 @end
+
+

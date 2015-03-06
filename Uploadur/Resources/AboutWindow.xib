@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
@@ -41,7 +40,7 @@
                         <rect key="frame" x="8" y="12" width="361" height="34"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="27J-Kv-V4x">
                             <font key="font" metaFont="system"/>
-                            <string key="title">Copyright © 2014 Tassilo Selover-Stephan
+                            <string key="title">Copyright © 2015 Tassilo Selover-Stephan
 Released under the GNU General Public License v3</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -67,7 +66,7 @@ Released under the GNU General Public License v3</string>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngr-ef-EaL">
-                        <rect key="frame" x="268" y="60" width="64" height="64"/>
+                        <rect key="frame" x="260" y="60" width="64" height="64"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="about-logo" id="1SY-gG-04e"/>
                     </imageView>
                 </subviews>

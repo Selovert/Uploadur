@@ -29,10 +29,11 @@
 @property AFHTTPRequestOperationManager *httpClient;
 
 @property NSString *filePath;
-@property BOOL foreignFile;
+@property int foreignFile;
 @property NSString *titleText;
 @property NSURL *screenshotPath;
 @property NSURL *archivePath;
+@property NSTimer *animationTimer;
 
 @property NSUserDefaults *defaults;
 @property NSFileManager *filemgr;
@@ -42,6 +43,6 @@
                     notificationController: (NotificationController *)notificationController
                                    globals:(Globals *)globals;
 - (void) startUp;
-- (void) uploadWrapper:(NSString *)fileName foreignFile:(BOOL)foreign;
+- (void) uploadWrapper:(NSString *)fileName foreignFile:(int)foreign;
 
 @end

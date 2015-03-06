@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
@@ -14,11 +13,9 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
-                <outlet property="imageItem" destination="6Bf-cO-1tD" id="mFJ-gU-mPQ"/>
-                <outlet property="infoItem" destination="Rbt-4q-bch" id="ZZz-qM-n39"/>
-                <outlet property="infoMenu" destination="G8h-ff-PqT" id="CeO-L1-ZPx"/>
-                <outlet property="openInFinderItem" destination="lTP-ju-ORm" id="zeZ-ZE-phE"/>
+                <outlet property="lastUploadItem" destination="lTP-ju-ORm" id="iE8-tE-zdE"/>
                 <outlet property="statusMenu" destination="hly-CZ-FwI" id="Z3w-Ss-0J5"/>
+                <outlet property="uploadFromURLItem" destination="kk8-pF-euZ" id="pGj-be-YX9"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -671,7 +668,7 @@
                 </menuItem>
             </items>
         </menu>
-        <menu id="hly-CZ-FwI" userLabel="Status Menu">
+        <menu autoenablesItems="NO" id="hly-CZ-FwI" userLabel="Status Menu">
             <items>
                 <menuItem title="About Uploadur" id="3f8-xO-UVO">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -680,23 +677,17 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="LGM-5W-Dgb"/>
-                <menuItem title="Idle..." enabled="NO" id="Rbt-4q-bch">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Idle..." id="G8h-ff-PqT">
-                        <items>
-                            <menuItem title="Idle" enabled="NO" id="6Bf-cO-1tD">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="info:" target="Voe-Tx-rLC" id="BV7-Lk-JxA"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Show in Finder" hidden="YES" enabled="NO" id="lTP-ju-ORm" userLabel="Open in Finder">
+                <menuItem title="Last Upload" enabled="NO" id="lTP-ju-ORm" userLabel="Open in Finder">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="openInFinder:" target="Voe-Tx-rLC" id="2lz-sB-WFH"/>
+                        <action selector="lastUpload:" target="Voe-Tx-rLC" id="0yJ-c4-hQW"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="8p6-ga-J5Y"/>
+                <menuItem title="Upload from URL" id="kk8-pF-euZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="uploadFromURL:" target="Voe-Tx-rLC" id="3DE-DV-BFv"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="eiN-i2-SiH"/>
