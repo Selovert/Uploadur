@@ -83,7 +83,7 @@
                 [self upload:fileName];
             }
         } else {
-            [self cancelUpload:@"Upload failed: File too large."];
+            [self cancelUpload:@"Upload failed: File too large (10MB)."];
         }
     } else {
         [self cancelUpload:@"Upload failed: no internet connection."];

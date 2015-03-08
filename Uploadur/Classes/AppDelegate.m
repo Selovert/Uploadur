@@ -41,10 +41,7 @@
     _directoryMonitor = [[DirectoryMonitor alloc] initWithNotificationController:_notificationController
                                                                 uploadController:_uploadController
                                                                          globals:_globals];
-    _settingsWindowController = [[SettingsWindowController alloc] initWithWindowNibName:@"SettingsWindow"];
-    _settingsWindowController.directoryMonitor = _directoryMonitor;
-    _settingsWindowController.appDelegate = self;
-    _settingsWindowController.globals = _globals;
+    _settingsWindowController = [[SettingsWindowController alloc] initWithAppDelegate:self];
     _aboutWindowController = [[AboutWindowController alloc] initWithWindowNibName:@"AboutWindow"];
     _popoverController = [[PopoverController alloc] init];
     _popoverController.delegate = self;

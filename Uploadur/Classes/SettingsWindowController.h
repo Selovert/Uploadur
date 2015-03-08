@@ -18,12 +18,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SettingsWindowController : NSWindowController
+@interface SettingsWindowController : NSWindowController <NSWindowDelegate>
 
 @property StartupController *startupController;
-@property DirectoryMonitor *directoryMonitor;
 @property AppDelegate *appDelegate;
-@property Globals *globals;
 @property AFHTTPRequestOperationManager *httpClient;
 @property dispatch_semaphore_t semaphore;
 
@@ -47,10 +45,10 @@
 @property NSMutableArray *albums;
 @property NSUserDefaults *defaults;
 
+- (SettingsWindowController *) initWithAppDelegate:(AppDelegate *)appDelegate;
 - (void) reveal;
 
 - (IBAction)startupCheckBox:(id)sender;
-- (IBAction)apply:(id)sender;
 - (IBAction)showFilePicker:(id)sender;
 - (IBAction)enableArchive:(id)sender;
 - (IBAction)disableArchive:(id)sender;
