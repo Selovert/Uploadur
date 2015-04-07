@@ -1,4 +1,4 @@
-#Uploadur
-Automatically upload your screenshots to Imgur! For more information, checkout the [GitHub Page](http://selovert.github.io/Uploadur/)
+#[Uploadur](http://selovert.github.io/Uploadur/)
+Automatically upload your screenshots to Imgur!
 
 Copyright © 2015 Tassilo Selover-Stephan.
