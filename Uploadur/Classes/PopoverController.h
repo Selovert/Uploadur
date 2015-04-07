@@ -19,7 +19,6 @@
 @property NSPopover *popover;
 
 @property (strong) IBOutlet NSImageView *imageView;
-@property (weak) IBOutlet NSTextField *label;
 @property (weak) IBOutlet NSButton *finderButton;
 @property (weak) IBOutlet NSButton *browserButton;
 

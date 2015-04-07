@@ -32,8 +32,6 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
-    
     _globals = [[Globals alloc] init];
     _notificationController = [[NotificationController alloc] init];
     _uploadController = [[UploadController alloc] initWithAppDelegate:self notificationController:_notificationController globals:_globals];
